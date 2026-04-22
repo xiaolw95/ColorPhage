@@ -274,6 +274,8 @@
 - 当前真实 `ggplot2` gallery 已通过用户审阅
 - 已启动进阶 family 设计阶段
 - 已生成 `forest` family 三个候选分支的真实 `ggplot2` 预览
+- `forest_canopy`、`forest_moss`、`forest_ember` 已写入 R 包
+- 当前包内 palette 数量为 9 组
 
 ## 7. 当前结论
 
@@ -281,6 +283,6 @@
 
 更合理的推进方式是：
 
-> 以 `forest` 作为第一个进阶 family，先设计 3 个候选分支并生成真实 `ggplot2` 预览。
+> 先完成 `forest` 接入后的包检查与 GitHub 同步，然后进入下一个进阶 family 或高数量扩展设计。
 
 当前 ColorPhage 已经进入“可版本化迭代的 R 包 MVP”阶段。

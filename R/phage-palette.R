@@ -1,18 +1,19 @@
 #' Generate a ColorPhage palette
 #'
 #' `phage_palette()` returns a colour vector from the current ColorPhage
-#' simple-mode palette library. The first development version supports the
-#' confirmed `soft` and `vivid` palette branches up to 8 colours.
+#' palette library. The current development version supports the confirmed
+#' `soft`, `vivid`, and `forest` palette branches up to 8 colours.
 #'
 #' @param n Number of colours to return. Must be between 1 and 8 in the
 #'   current MVP.
-#' @param mode Simple mode. One of `"soft"` or `"vivid"`. Ignored when
-#'   `palette` is supplied.
+#' @param mode Palette mode. One of `"soft"`, `"vivid"`, or `"forest"`.
+#'   Ignored when `palette` is supplied.
 #' @param palette Internal palette id, such as `"soft_harbor"` or
-#'   `"vivid_core"`. When supplied, it takes priority over `mode` and
-#'   `variant`.
+#'   `"vivid_core"` or `"forest_canopy"`. When supplied, it takes priority
+#'   over `mode` and `variant`.
 #' @param variant Optional variant within a mode, such as `"breeze"`,
-#'   `"harbor"`, `"mist"`, `"core"`, `"fresh"`, or `"drama"`.
+#'   `"harbor"`, `"mist"`, `"core"`, `"fresh"`, `"drama"`, `"canopy"`,
+#'   `"moss"`, or `"ember"`.
 #'
 #' @return A character vector of hexadecimal colours.
 #' @export
@@ -20,8 +21,9 @@
 #' @examples
 #' phage_palette(5, mode = "soft")
 #' phage_palette(8, mode = "vivid", variant = "drama")
+#' phage_palette(8, mode = "forest", variant = "canopy")
 phage_palette <- function(n,
-                          mode = c("soft", "vivid"),
+                          mode = c("soft", "vivid", "forest"),
                           palette = NULL,
                           variant = NULL) {
   n <- .validate_n(n)

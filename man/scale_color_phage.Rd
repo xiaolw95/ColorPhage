@@ -2,12 +2,17 @@
 \alias{scale_color_phage}
 \title{ColorPhage ggplot2 colour scales}
 \usage{
-scale_color_phage(..., mode = c("soft", "vivid"), palette = NULL, variant = NULL)
+scale_color_phage(
+  ...,
+  mode = c("soft", "vivid", "forest"),
+  palette = NULL,
+  variant = NULL
+)
 }
 \arguments{
 \item{...}{Additional arguments passed to ggplot2 discrete scale constructors.}
-\item{mode}{Simple mode. One of \code{"soft"} or \code{"vivid"}. Ignored when \code{palette} is supplied.}
-\item{palette}{Internal palette id, such as \code{"soft_harbor"} or \code{"vivid_core"}.}
+\item{mode}{Palette mode. One of \code{"soft"}, \code{"vivid"}, or \code{"forest"}. Ignored when \code{palette} is supplied.}
+\item{palette}{Internal palette id, such as \code{"soft_harbor"}, \code{"vivid_core"}, or \code{"forest_canopy"}.}
 \item{variant}{Optional variant within a mode.}
 }
 \value{

@@ -1,13 +1,14 @@
 # ColorPhage
 
-ColorPhage is an early-stage R package for high-aesthetic scientific figure palettes. The current MVP focuses on simple `soft` and `vivid` modes for publication-oriented discrete colour palettes.
+ColorPhage is an early-stage R package for high-aesthetic scientific figure palettes. The current MVP includes simple `soft` and `vivid` modes plus the first advanced `forest` family for publication-oriented discrete colour palettes.
 
 ## Current Scope
 
 - `phage_palette()` returns colour vectors.
 - `scale_color_phage()` and `scale_fill_phage()` provide ggplot2 discrete scales.
-- The MVP includes 6 confirmed `n = 8` palettes.
-- Advanced families, continuous palettes, diverging palettes, and generation features are planned but not implemented yet.
+- The MVP includes 9 confirmed `n = 8` palettes.
+- The first advanced family, `forest`, is implemented.
+- Continuous palettes, diverging palettes, and generation features are planned but not implemented yet.
 
 ## Installation
 
@@ -26,6 +27,7 @@ library(ColorPhage)
 
 phage_palette(5, mode = "soft")
 phage_palette(8, mode = "vivid", variant = "drama")
+phage_palette(8, mode = "forest", variant = "canopy")
 phage_palette(8, palette = "soft_harbor")
 ```
 
@@ -42,6 +44,10 @@ ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
 ggplot(mtcars, aes(factor(cyl), fill = factor(cyl))) +
   geom_bar() +
   scale_fill_phage(mode = "soft")
+
+ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
+  geom_point(size = 3) +
+  scale_color_phage(mode = "forest")
 ```
 
 ## Available Palettes
@@ -58,11 +64,15 @@ Current palette IDs:
 - `vivid_core`
 - `vivid_fresh`
 - `vivid_drama`
+- `forest_canopy`
+- `forest_moss`
+- `forest_ember`
 
 Default mappings:
 
 - `mode = "soft"` uses `soft_harbor`
 - `mode = "vivid"` uses `vivid_core`
+- `mode = "forest"` uses `forest_canopy`
 
 ## Development Notes
 

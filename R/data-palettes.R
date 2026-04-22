@@ -64,11 +64,44 @@
       "#415A80", "#4B6A97", "#5B9A90", "#8FAF62",
       "#D3A35A", "#C97B5D", "#B27B86", "#8C6492"
     )
+  ),
+  forest_canopy = list(
+    id = "forest_canopy",
+    mode = "forest",
+    variant = "canopy",
+    display_name = "Forest Canopy",
+    role = "Default forest branch with deep green, moss, grey teal, muted gold, brick coral, berry, and parchment.",
+    colors = c(
+      "#23483A", "#6F8F62", "#A9B98F", "#6F9092",
+      "#D6B36A", "#C98563", "#8A4A58", "#E6DCC6"
+    )
+  ),
+  forest_moss = list(
+    id = "forest_moss",
+    mode = "forest",
+    variant = "moss",
+    display_name = "Forest Moss",
+    role = "Softer forest branch with sage, moss, fog teal, warm sand, muted fruit, and bark brown.",
+    colors = c(
+      "#557A5C", "#8CA97A", "#B8C6A3", "#789C9A",
+      "#AFC6C2", "#D7C8A5", "#C99576", "#7A5B4E"
+    )
+  ),
+  forest_ember = list(
+    id = "forest_ember",
+    mode = "forest",
+    variant = "ember",
+    display_name = "Forest Ember",
+    role = "Narrative forest branch with dark green, cool grey-green, olive, blue-grey, bark, and a controlled warm ember anchor.",
+    colors = c(
+      "#1F3F35", "#496B57", "#7E916A", "#B8B58B",
+      "#536E76", "#9A6B5A", "#C46F52", "#D7C6A1"
+    )
   )
 )
 
 .phage_mode_defaults <- c(
   soft = "soft_harbor",
-  vivid = "vivid_core"
+  vivid = "vivid_core",
+  forest = "forest_canopy"
 )
-

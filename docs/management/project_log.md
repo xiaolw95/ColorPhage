@@ -773,6 +773,39 @@
 - 图像资产目录：
   - [forest_family_preview_figures](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\forest_family_preview_figures)
 
+#### 3.52 将 forest family 写入 R 包
+
+- 用户已审阅 `forest` 三个候选分支，并确认：
+  - 当前版本没有问题
+  - 可以继续
+- 已将以下 palette 写入 R 包核心数据：
+  - `forest_canopy`
+  - `forest_moss`
+  - `forest_ember`
+- 已新增默认映射：
+  - `mode = "forest"` -> `forest_canopy`
+- 当前 `phage_palette()` 支持：
+  - `mode = "soft"`
+  - `mode = "vivid"`
+  - `mode = "forest"`
+- 当前 R 包 palette 总数：
+  - 9 组
+- 已更新：
+  - `R/data-palettes.R`
+  - `R/phage-palette.R`
+  - `R/ggplot-scales.R`
+  - `tests/testthat/test-phage-palette.R`
+  - `man/*.Rd`
+  - `README.md`
+- 已重新生成主 gallery：
+  - [simple_modes_gallery.html](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\github_repo\ColorPhage\inst\gallery\simple_modes_gallery.html)
+- 当前主 gallery 内容：
+  - 3 组 `soft`
+  - 3 组 `vivid`
+  - 3 组 `forest`
+  - 每组 4 类真实 `ggplot2` 图
+  - 合计 36 张 SVG 图像
+
 ## 4. 当前已存在核心文档
 
 - [requirements_blueprint_draft.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\planning\requirements_blueprint_draft.md)
