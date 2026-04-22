@@ -734,6 +734,45 @@
   - `tools\check_package.ps1` 通过
   - `R CMD check --no-manual`：`Status: OK`
 
+#### 3.50 确认真实 ggplot2 gallery 并启动进阶 family 阶段
+
+- 用户已审阅真实 `ggplot2` gallery，并确认：
+  - 当前没有问题
+  - 可以开始下一步
+- 当前 simple modes MVP 已进入稳定基线：
+  - 6 组 simple palette 已可调用
+  - 真实 `ggplot2` gallery 已通过审阅
+  - GitHub 仓库已同步
+- 下一阶段建议：
+  - 启动第一个进阶 family 的设计
+  - 优先从 `forest` 开始，而不是 `mist` 或 `cinema`
+- 原因：
+  - `mist` 与现有 `soft` 气质过近
+  - `cinema` 与现有 `vivid_drama` 容易重叠
+  - `forest` 与生物、生态、微生物、phage 语境天然贴合
+  - `forest` 能提供与 simple modes 足够不同的第一组高级风格样本
+
+#### 3.51 创建 forest family 候选预览
+
+- 已新增进阶 family 启动草案：
+  - [advanced_family_design_plan.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\advanced_family_design_plan.md)
+- 已新增 `forest` 候选草案：
+  - [forest_family_candidates_draft.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\forest_family_candidates_draft.md)
+- 已新增 `forest` 候选预览生成脚本：
+  - [build_forest_family_candidates_preview.R](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\build_forest_family_candidates_preview.R)
+- 已生成预览页面：
+  - [forest_family_candidates_preview.html](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\forest_family_candidates_preview.html)
+- 当前候选：
+  - `forest_canopy`
+  - `forest_moss`
+  - `forest_ember`
+- 当前预览内容：
+  - 每个候选 `n = 8`
+  - 每个候选包含 bar、scatter、line、UMAP-like 四类真实 `ggplot2` 图
+  - 合计 12 张 SVG 图像资产
+- 图像资产目录：
+  - [forest_family_preview_figures](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\forest_family_preview_figures)
+
 ## 4. 当前已存在核心文档
 
 - [requirements_blueprint_draft.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\planning\requirements_blueprint_draft.md)

@@ -271,7 +271,9 @@
 - 用户已确认当前 gallery 没有问题
 - 根目录文档已同步到正式 R 包仓库，开发流程脚本已复测通过
 - MVP 已推送到 GitHub
-- 当前真实 `ggplot2` gallery 尚待用户审阅
+- 当前真实 `ggplot2` gallery 已通过用户审阅
+- 已启动进阶 family 设计阶段
+- 已生成 `forest` family 三个候选分支的真实 `ggplot2` 预览
 
 ## 7. 当前结论
 
@@ -279,6 +281,6 @@
 
 更合理的推进方式是：
 
-> 先审阅当前真实 `ggplot2` gallery，如果展示逻辑认可，再开始第一个进阶 family。
+> 以 `forest` 作为第一个进阶 family，先设计 3 个候选分支并生成真实 `ggplot2` 预览。
 
 当前 ColorPhage 已经进入“可版本化迭代的 R 包 MVP”阶段。
