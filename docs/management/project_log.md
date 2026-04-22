@@ -681,6 +681,29 @@
   - `README.md`
   - `INDEX.md`
 
+#### 3.48 完成首次 commit 与 GitHub 推送
+
+- 用户确认当前 simple modes gallery 没有问题。
+- 已为当前仓库配置本地 Git 作者信息：
+  - `user.name = xiaolw95`
+  - `user.email = xiaolw95@users.noreply.github.com`
+- 已完成首次本地 commit：
+  - `7ca789d Initial ColorPhage package prototype`
+- 提交后发现正式仓库内 `docs/research` 被误记录为文件而非目录。
+- 已修正为正确路径：
+  - [reference_image_index.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\github_repo\ColorPhage\docs\research\reference_image_index.md)
+- 已追加结构修复 commit：
+  - `96771a3 Fix research docs index path`
+- 已添加 GitHub remote：
+  - `https://github.com/xiaolw95/ColorPhage.git`
+- 已成功推送 `main` 到 GitHub：
+  - [ColorPhage GitHub repository](https://github.com/xiaolw95/ColorPhage)
+- 推送时发现全局 Git 配置 `http.sslVerify=false` 导致 TLS 安全 warning。
+- 已恢复：
+  - `git config --global http.sslVerify true`
+- 已通过远程连接测试：
+  - `git ls-remote --heads origin`
+
 ## 4. 当前已存在核心文档
 
 - [requirements_blueprint_draft.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\planning\requirements_blueprint_draft.md)

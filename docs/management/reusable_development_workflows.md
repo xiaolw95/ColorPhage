@@ -137,9 +137,25 @@ powershell -ExecutionPolicy Bypass -File "tools\build_gallery.ps1"
 git init -b main
 ```
 
-当前尚未创建首次 commit。
+当前已完成首次 commit，并已推送到 GitHub：
 
-上传 GitHub 前建议执行：
+```text
+https://github.com/xiaolw95/ColorPhage
+```
+
+当前远程地址：
+
+```powershell
+git remote -v
+```
+
+应显示：
+
+```text
+origin  https://github.com/xiaolw95/ColorPhage.git
+```
+
+每次准备提交前建议执行：
 
 ```powershell
 git status --short
@@ -150,16 +166,15 @@ powershell -ExecutionPolicy Bypass -File "tools\check_package.ps1"
 
 ```powershell
 git add .
-git commit -m "Initial ColorPhage package prototype"
-git remote add origin <YOUR_GITHUB_REPO_URL>
-git push -u origin main
+git commit -m "<short clear message>"
+git push
 ```
 
 ## 7. 当前下一步
 
 当前建议下一步：
 
-1. 人工审阅 [simple_modes_gallery.html](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\github_repo\ColorPhage\inst\gallery\simple_modes_gallery.html)
-2. 根据审阅结果微调 gallery 或 palette
-3. 若 gallery 通过，开始准备首次 Git commit
-4. 之后再接入第一个进阶 family
+1. 将 [simple_modes_gallery.html](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\github_repo\ColorPhage\inst\gallery\simple_modes_gallery.html) 升级为真实 `ggplot2` 示例 gallery
+2. 或开始接入第一个进阶 family
+3. 每完成一个稳定节点后执行 `tools\check_package.ps1`
+4. 检查通过后继续小步 commit 并 push

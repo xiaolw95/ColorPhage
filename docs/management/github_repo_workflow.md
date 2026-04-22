@@ -56,16 +56,30 @@ C:\Program Files\R\R-4.5.3\bin\Rscript.exe
 git init -b main
 ```
 
-当前尚未创建提交。
+当前已完成首次本地提交，并已推送到 GitHub：
 
-后续上传 GitHub 时可在该目录中执行：
+```text
+https://github.com/xiaolw95/ColorPhage
+```
+
+当前远程地址：
 
 ```powershell
-git add .
-git commit -m "Initial ColorPhage package prototype"
-git remote add origin <YOUR_GITHUB_REPO_URL>
-git push -u origin main
+origin  https://github.com/xiaolw95/ColorPhage.git
 ```
+
+当前主要提交：
+
+```text
+96771a3 Fix research docs index path
+7ca789d Initial ColorPhage package prototype
+```
+
+注意：
+
+- 推送前曾发现全局 Git 配置 `http.sslVerify=false`
+- 已恢复为 `http.sslVerify=true`
+- 已通过 `git ls-remote --heads origin` 确认远程连接正常
 
 ## 5. R 包检查流程
 
@@ -142,6 +156,6 @@ powershell -ExecutionPolicy Bypass -File "tools\build_gallery.ps1"
 
 建议下一步进入：
 
-1. 打开 [simple_modes_gallery.html](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\github_repo\ColorPhage\inst\gallery\simple_modes_gallery.html) 进行人工审阅
-2. 若 gallery 认可，准备首次 Git commit
-3. 后续再开始接入第一个进阶 family
+1. 将当前简化 SVG gallery 升级为真实 `ggplot2` gallery
+2. 或开始接入第一个进阶 family
+3. 每完成一个稳定节点后继续小步 commit 并 push

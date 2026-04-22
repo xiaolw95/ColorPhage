@@ -176,11 +176,11 @@
 - 阶段 2 已完成简单模式的第一批核心资产
 - 阶段 2 的进阶 family 资产尚未开始
 - 阶段 3 已开始，完成了最小 R 包骨架和核心 API 初版
-- 独立 GitHub 仓库已创建，并已通过 `R CMD check --no-manual`
+- 独立 GitHub 仓库已创建、已完成首次 commit、已推送到 GitHub，并已通过 `R CMD check --no-manual`
 
 因此我们正处在：
 
-> 从“简单模式可试用原型”过渡到“人工审阅 gallery、准备首次 commit、再接入进阶 family”的节点。
+> 从“简单模式可版本化 MVP”过渡到“真实 ggplot2 展示验证、进阶 family 设计与高数量扩展”的节点。
 
 ## 5. 下一步建议
 
@@ -188,17 +188,17 @@
 
 下一步建议优先做：
 
-1. 人工审阅 `simple_modes_gallery.html`
-2. 如需调整，先微调当前 simple modes gallery 或 palette
-3. 若 gallery 通过，准备首次 Git commit
-4. 再开始接入第一个进阶 family
+1. 将当前 `simple_modes_gallery.html` 从简化 SVG 预览升级为真实 `ggplot2` 示例
+2. 用柱状图、散点图、折线图和 UMAP-like 图验证 6 组 simple palette
+3. 再开始接入第一个进阶 family
+4. 后续按稳定节点继续 commit 并 push
 
 原因：
 
 - 当前简单模式颜色已经确认并已转入代码
 - 当前代码已经通过 `R CMD check`
-- gallery 已生成，下一步需要从审美和使用感角度人工确认
-- 确认后再进入 commit 和进阶 family，会更稳
+- 当前 MVP 已经推送到 GitHub，有可靠回退点
+- 下一步用真实 `ggplot2` 图形验证，会比继续抽象讨论更可靠
 
 ### 5.2 具体执行顺序
 
@@ -215,7 +215,7 @@
 7. 实现 `scale_color_phage()` 与 `scale_fill_phage()`
 8. 用当前 6 组 palette 做最小 gallery
 
-当前第 1 到第 8 步已经完成；下一步应进行 gallery 人工审阅与首次 commit 准备。
+当前第 1 到第 8 步已经完成，并已完成首次 commit 与 GitHub 推送；下一步应升级真实 `ggplot2` gallery 或开始进阶 family 设计。
 
 ### 5.3 可以暂缓的事项
 
@@ -267,8 +267,9 @@
 当前状态：
 
 - 最小 simple modes gallery 已生成
-- 尚待人工审阅
+- 用户已确认当前 gallery 没有问题
 - 根目录文档已同步到正式 R 包仓库，开发流程脚本已复测通过
+- MVP 已推送到 GitHub
 
 ## 7. 当前结论
 
@@ -276,6 +277,6 @@
 
 更合理的推进方式是：
 
-> 先人工审阅当前 simple modes gallery，确认后准备首次 Git commit，再开始进阶 family。
+> 先把当前 simple modes MVP 用真实 `ggplot2` 示例验证扎实，再开始第一个进阶 family。
 
-完成这一步后，ColorPhage 就会从“可试用原型”进入“可版本化迭代的 R 包 MVP”。
+当前 ColorPhage 已经进入“可版本化迭代的 R 包 MVP”阶段。
