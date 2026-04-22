@@ -9,6 +9,7 @@ ColorPhage is an early-stage R package for high-aesthetic scientific figure pale
 - `theme_phage()` provides a matching ggplot2 publication theme.
 - The MVP includes 24 confirmed `n = 8` palettes.
 - The eight default palettes now include structured `n = 10 / 12` extensions.
+- Experimental helpers now cover `20-30` category scenarios through clustered and hierarchical strategies.
 - The first six advanced families, `forest`, `mineral`, `ocean`, `retro`, `cinema`, and `mist`, are implemented.
 - Continuous palettes, diverging palettes, and generation features are planned but not implemented yet.
 
@@ -39,6 +40,12 @@ phage_palette(8, palette = "soft_harbor")
 phage_palette(10, mode = "soft")
 phage_palette(12, mode = "vivid")
 phage_palette(12, mode = "forest")
+phage_large_palette(24, strategy = "clustered", family = "ocean")
+phage_collapse_tail(
+  labels = c("A", "B", "C", "D", "E"),
+  values = c(10, 8, 2, 1, 1),
+  top_n = 3
+)
 ```
 
 With ggplot2:
@@ -151,6 +158,13 @@ default palettes only:
 - `retro_film`
 - `cinema_noir`
 - `mist_cloud`
+
+For `20-30` categories, ColorPhage now recommends strategy helpers instead of
+flat colour enumeration:
+
+- `phage_large_palette(..., strategy = "clustered")`
+- `phage_large_palette(..., strategy = "hierarchical")`
+- `phage_collapse_tail()` for long-tail composition plots
 
 ## Gallery
 

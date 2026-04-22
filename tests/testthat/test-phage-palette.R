@@ -105,3 +105,34 @@ test_that("theme_phage returns a ggplot2 theme", {
 
   expect_s3_class(theme_obj, "theme")
 })
+
+test_that("clustered large-scale palettes return expected lengths", {
+  cols <- phage_large_palette(n = 24, strategy = "clustered", family = "ocean")
+
+  expect_length(cols, 24)
+  expect_true(all(grepl("^#", cols)))
+})
+
+test_that("hierarchical large-scale palettes return named vectors", {
+  labels <- paste0("Subtype_", 1:12)
+  groups <- rep(c("A", "B", "C"), each = 4)
+  cols <- phage_large_palette(
+    labels = labels,
+    groups = groups,
+    strategy = "hierarchical",
+    family = "forest"
+  )
+
+  expect_length(cols, 12)
+  expect_identical(names(cols), labels)
+})
+
+test_that("tail collapse preserves top labels and collapses others", {
+  collapsed <- phage_collapse_tail(
+    labels = c("A", "B", "C", "D", "E"),
+    values = c(10, 8, 2, 1, 1),
+    top_n = 3
+  )
+
+  expect_identical(collapsed, c("A", "B", "C", "Other", "Other"))
+})
