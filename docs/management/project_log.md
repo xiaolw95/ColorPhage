@@ -806,6 +806,33 @@
   - 每组 4 类真实 `ggplot2` 图
   - 合计 36 张 SVG 图像
 
+#### 3.53 启动第二个进阶 family：mineral
+
+- 用户要求：
+  - 继续做第二个进阶 family
+- 当前建议第二个 family 选择：
+  - `mineral`
+- 选择原因：
+  - 与 `forest` 的自然有机感拉开差异
+  - 更适合临床、方法学、模型比较、机制统计图
+  - 蓝灰、石板、矿物青、冷砂与铁锈锚点能形成高级科研审美
+- 当前创建 3 个候选分支：
+  - `mineral_slate`
+  - `mineral_quartz`
+  - `mineral_oxide`
+- 已新增 `mineral` 候选草案：
+  - [mineral_family_candidates_draft.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\mineral_family_candidates_draft.md)
+- 已新增 `mineral` 候选预览生成脚本：
+  - [build_mineral_family_candidates_preview.R](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\build_mineral_family_candidates_preview.R)
+- 已生成预览页面：
+  - [mineral_family_candidates_preview.html](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\mineral_family_candidates_preview.html)
+- 当前预览内容：
+  - 每个候选 `n = 8`
+  - 每个候选包含 bar、scatter、line、UMAP-like 四类真实 `ggplot2` 图
+  - 合计 12 张 SVG 图像资产
+- 图像资产目录：
+  - [mineral_family_preview_figures](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\mineral_family_preview_figures)
+
 ## 4. 当前已存在核心文档
 
 - [requirements_blueprint_draft.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\planning\requirements_blueprint_draft.md)
