@@ -1,12 +1,20 @@
 test_that("default palettes return expected lengths", {
   expect_length(phage_palette(3, mode = "soft"), 3)
   expect_length(phage_palette(8, mode = "vivid"), 8)
+  expect_length(phage_palette(10, mode = "soft"), 10)
+  expect_length(phage_palette(12, mode = "vivid"), 12)
   expect_length(phage_palette(8, mode = "forest"), 8)
+  expect_length(phage_palette(10, mode = "forest"), 10)
   expect_length(phage_palette(8, mode = "mineral"), 8)
+  expect_length(phage_palette(12, mode = "mineral"), 12)
   expect_length(phage_palette(8, mode = "ocean"), 8)
+  expect_length(phage_palette(10, mode = "ocean"), 10)
   expect_length(phage_palette(8, mode = "retro"), 8)
+  expect_length(phage_palette(12, mode = "retro"), 12)
   expect_length(phage_palette(8, mode = "cinema"), 8)
+  expect_length(phage_palette(10, mode = "cinema"), 10)
   expect_length(phage_palette(8, mode = "mist"), 8)
+  expect_length(phage_palette(12, mode = "mist"), 12)
 })
 
 test_that("palette ids and variants resolve", {
@@ -66,10 +74,19 @@ test_that("palette ids and variants resolve", {
     phage_palette(2, palette = "mist_shell"),
     c("#95A7A0", "#B9C7C1")
   )
+  expect_identical(
+    phage_palette(10, mode = "soft")[c(1, 6, 10)],
+    c("#6F8EA8", "#E2C788", "#F3B1A6")
+  )
+  expect_identical(
+    phage_palette(12, mode = "ocean")[c(1, 8, 12)],
+    c("#153C4A", "#5E89A9", "#B6635C")
+  )
 })
 
-test_that("n above current MVP limit errors", {
-  expect_error(phage_palette(9, mode = "soft"), "supports up to 8")
+test_that("unsupported palette sizes error clearly", {
+  expect_error(phage_palette(9, palette = "soft_breeze"), "currently supports up to 8")
+  expect_error(phage_palette(13, mode = "soft"), "supports up to 12")
 })
 
 test_that("available palette metadata includes current branches", {

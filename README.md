@@ -8,6 +8,7 @@ ColorPhage is an early-stage R package for high-aesthetic scientific figure pale
 - `scale_color_phage()` and `scale_fill_phage()` provide ggplot2 discrete scales.
 - `theme_phage()` provides a matching ggplot2 publication theme.
 - The MVP includes 24 confirmed `n = 8` palettes.
+- The eight default palettes now include structured `n = 10 / 12` extensions.
 - The first six advanced families, `forest`, `mineral`, `ocean`, `retro`, `cinema`, and `mist`, are implemented.
 - Continuous palettes, diverging palettes, and generation features are planned but not implemented yet.
 
@@ -35,6 +36,9 @@ phage_palette(8, mode = "retro", variant = "film")
 phage_palette(8, mode = "cinema", variant = "noir")
 phage_palette(8, mode = "mist", variant = "cloud")
 phage_palette(8, palette = "soft_harbor")
+phage_palette(10, mode = "soft")
+phage_palette(12, mode = "vivid")
+phage_palette(12, mode = "forest")
 ```
 
 With ggplot2:
@@ -135,6 +139,18 @@ The first `theme_phage()` release focuses on:
 - restrained grid lines
 - cleaner titles and legends
 - compatibility with the current discrete palette system
+
+The first high-cardinality release currently supports `n = 10 / 12` for the
+default palettes only:
+
+- `soft_harbor`
+- `vivid_core`
+- `forest_canopy`
+- `mineral_slate`
+- `ocean_current`
+- `retro_film`
+- `cinema_noir`
+- `mist_cloud`
 
 ## Gallery
 
