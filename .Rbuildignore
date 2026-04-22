@@ -1,0 +1,11 @@
+^docs$
+^references$
+^trash$
+^INDEX\.md$
+^\.github$
+^\.git$
+^\.gitignore$
+^.*\.Rcheck$
+^.*\.Rproj$
+^\.Rproj\.user$
+^tools$

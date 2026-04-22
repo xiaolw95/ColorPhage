@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ColorPhage Simple Modes Gallery</title>
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --panel: #fffdf8;
+      --ink: #27313c;
+      --muted: #6c7480;
+      --line: #ded6ca;
+      --soft: #92adc0;
+      --vivid: #415a80;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(146,173,192,.28), transparent 28%),
+        radial-gradient(circle at 86% 6%, rgba(201,123,93,.18), transparent 24%),
+        radial-gradient(circle at 82% 86%, rgba(91,154,144,.16), transparent 24%),
+        var(--bg);
+      line-height: 1.55;
+    }
+    .wrap { width: min(1180px, calc(100% - 48px)); margin: 36px auto 72px; }
+    .hero, .palette-section {
+      background: rgba(255,253,248,.94);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: 0 22px 54px rgba(70,80,90,.10);
+    }
+    .hero { padding: 34px 36px; margin-bottom: 22px; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: clamp(34px, 5vw, 58px); letter-spacing: .01em; margin-bottom: 12px; }
+    .hero p { max-width: 780px; color: var(--muted); font-size: 17px; }
+    .mode-strip { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      background: #f8f5ef;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .palette-section { padding: 26px; margin-top: 20px; }
+    .palette-head { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
+    .eyebrow { color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; margin-bottom: 6px; }
+    h2 { font-size: clamp(24px, 3vw, 34px); margin-bottom: 8px; }
+    h2 span {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 500;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+    .palette-head p:last-child { color: var(--muted); max-width: 760px; }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); gap: 12px; margin-bottom: 18px; }
+    .swatch-card {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(50,60,70,.05);
+    }
+    .chip { height: 98px; }
+    .swatch-card code {
+      display: block;
+      padding: 10px 12px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      background: #fbf8f2;
+    }
+    .preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .preview-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #f9f5ef);
+      border-radius: 22px;
+      padding: 16px 16px 12px;
+    }
+    .preview-card h3 { font-size: 15px; color: var(--muted); margin-bottom: 10px; }
+    svg { width: 100%; height: auto; display: block; }
+    .footer { color: var(--muted); text-align: center; padding: 26px 0 0; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>ColorPhage Simple Modes Gallery</h1>
+      <p>这是 ColorPhage 简单模式 MVP 的最小 gallery，用来同时检查色块、填充图、散点图和折线图中的真实观感。当前展示 3 组 soft 与 3 组 vivid 的最终 n = 8 版本。</p>
+      <div class="mode-strip">
+        <span class="pill">soft default: soft_harbor</span>
+        <span class="pill">vivid default: vivid_core</span>
+        <span class="pill">current limit: n &lt;= 8</span>
+      </div>
+    </section>
+    <section class="palette-section">
+      <div class="palette-head">
+        <div>
+          <p class="eyebrow">soft / breeze</p>
+          <h2>Soft Breeze <span>soft_breeze</span></h2>
+          <p>Fresh soft branch with teal, dusty pink, pale blue, and mellow yellow.</p>
+        </div>
+      </div>
+      <div class="swatches"><div class="swatch-card"><div class="chip" style="background:#0C9A89"></div><code>#0C9A89</code></div>
+<div class="swatch-card"><div class="chip" style="background:#74BDB0"></div><code>#74BDB0</code></div>
+<div class="swatch-card"><div class="chip" style="background:#E796A1"></div><code>#E796A1</code></div>
+<div class="swatch-card"><div class="chip" style="background:#D3B5C6"></div><code>#D3B5C6</code></div>
+<div class="swatch-card"><div class="chip" style="background:#F6D8E5"></div><code>#F6D8E5</code></div>
+<div class="swatch-card"><div class="chip" style="background:#C7E1F4"></div><code>#C7E1F4</code></div>
+<div class="swatch-card"><div class="chip" style="background:#F5CB7E"></div><code>#F5CB7E</code></div>
+<div class="swatch-card"><div class="chip" style="background:#E7D9AE"></div><code>#E7D9AE</code></div></div>
+      <div class="preview-grid">
+        <div class="preview-card"><h3>Fill / bar</h3><svg viewBox="0 0 380 150" role="img" aria-label="bar chart preview">
+      <line x1="18" y1="132" x2="360" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <rect x="28" y="72" width="28" height="58" rx="7" fill="#0C9A89" />
+<rect x="70" y="54" width="28" height="76" rx="7" fill="#74BDB0" />
+<rect x="112" y="64" width="28" height="66" rx="7" fill="#E796A1" />
+<rect x="154" y="42" width="28" height="88" rx="7" fill="#D3B5C6" />
+<rect x="196" y="58" width="28" height="72" rx="7" fill="#F6D8E5" />
+<rect x="238" y="34" width="28" height="96" rx="7" fill="#C7E1F4" />
+<rect x="280" y="66" width="28" height="64" rx="7" fill="#F5CB7E" />
+<rect x="322" y="48" width="28" height="82" rx="7" fill="#E7D9AE" />
+    </svg></div>
+        <div class="preview-card"><h3>Colour / scatter</h3><svg viewBox="0 0 340 160" role="img" aria-label="scatter plot preview">
+      <line x1="26" y1="134" x2="318" y2="134" stroke="#d8d0c4" stroke-width="1"/>
+      <line x1="26" y1="22" x2="26" y2="134" stroke="#d8d0c4" stroke-width="1"/>
+      <circle cx="54" cy="88" r="9" fill="#0C9A89" opacity="0.92" />
+<circle cx="86" cy="56" r="9" fill="#74BDB0" opacity="0.92" />
+<circle cx="118" cy="116" r="9" fill="#E796A1" opacity="0.92" />
+<circle cx="150" cy="74" r="9" fill="#D3B5C6" opacity="0.92" />
+<circle cx="182" cy="132" r="9" fill="#F6D8E5" opacity="0.92" />
+<circle cx="214" cy="44" r="9" fill="#C7E1F4" opacity="0.92" />
+<circle cx="246" cy="104" r="9" fill="#F5CB7E" opacity="0.92" />
+<circle cx="278" cy="66" r="9" fill="#E7D9AE" opacity="0.92" />
+    </svg></div>
+        <div class="preview-card"><h3>Colour / line</h3><svg viewBox="0 0 380 150" role="img" aria-label="line chart preview">
+      <line x1="18" y1="132" x2="360" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <line x1="18" y1="20" x2="18" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <polyline points="28,86.7 70,72.7 112,78.7 154,56.7 196,62.7 238,40.7 280,52.7 322,34.7" fill="none" stroke="#0C9A89" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,87.8 70,73.8 112,79.8 154,57.8 196,63.8 238,41.8 280,53.8 322,35.8" fill="none" stroke="#74BDB0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,88.9 70,74.9 112,80.9 154,58.9 196,64.9 238,42.9 280,54.9 322,36.9" fill="none" stroke="#E796A1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,90 70,76 112,82 154,60 196,66 238,44 280,56 322,38" fill="none" stroke="#D3B5C6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,91.1 70,77.1 112,83.1 154,61.1 196,67.1 238,45.1 280,57.1 322,39.1" fill="none" stroke="#F6D8E5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,92.2 70,78.2 112,84.2 154,62.2 196,68.2 238,46.2 280,58.2 322,40.2" fill="none" stroke="#C7E1F4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,93.3 70,79.3 112,85.3 154,63.3 196,69.3 238,47.3 280,59.3 322,41.3" fill="none" stroke="#F5CB7E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,94.4 70,80.4 112,86.4 154,64.4 196,70.4 238,48.4 280,60.4 322,42.4" fill="none" stroke="#E7D9AE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+    </svg></div>
+      </div>
+    </section>
+<section class="palette-section">
+      <div class="palette-head">
+        <div>
+          <p class="eyebrow">soft / harbor</p>
+          <h2>Soft Harbor <span>soft_harbor</span></h2>
+          <p>Default soft branch with mature blue-grey, muted teal, amber, coral, and blush.</p>
+        </div>
+      </div>
+      <div class="swatches"><div class="swatch-card"><div class="chip" style="background:#92ADC0"></div><code>#92ADC0</code></div>
+<div class="swatch-card"><div class="chip" style="background:#9DBCBA"></div><code>#9DBCBA</code></div>
+<div class="swatch-card"><div class="chip" style="background:#C8D6E3"></div><code>#C8D6E3</code></div>
+<div class="swatch-card"><div class="chip" style="background:#B7C9A5"></div><code>#B7C9A5</code></div>
+<div class="swatch-card"><div class="chip" style="background:#F1B04A"></div><code>#F1B04A</code></div>
+<div class="swatch-card"><div class="chip" style="background:#EB6E51"></div><code>#EB6E51</code></div>
+<div class="swatch-card"><div class="chip" style="background:#D98E88"></div><code>#D98E88</code></div>
+<div class="swatch-card"><div class="chip" style="background:#F3B1A6"></div><code>#F3B1A6</code></div></div>
+      <div class="preview-grid">
+        <div class="preview-card"><h3>Fill / bar</h3><svg viewBox="0 0 380 150" role="img" aria-label="bar chart preview">
+      <line x1="18" y1="132" x2="360" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <rect x="28" y="72" width="28" height="58" rx="7" fill="#92ADC0" />
+<rect x="70" y="54" width="28" height="76" rx="7" fill="#9DBCBA" />
+<rect x="112" y="64" width="28" height="66" rx="7" fill="#C8D6E3" />
+<rect x="154" y="42" width="28" height="88" rx="7" fill="#B7C9A5" />
+<rect x="196" y="58" width="28" height="72" rx="7" fill="#F1B04A" />
+<rect x="238" y="34" width="28" height="96" rx="7" fill="#EB6E51" />
+<rect x="280" y="66" width="28" height="64" rx="7" fill="#D98E88" />
+<rect x="322" y="48" width="28" height="82" rx="7" fill="#F3B1A6" />
+    </svg></div>
+        <div class="preview-card"><h3>Colour / scatter</h3><svg viewBox="0 0 340 160" role="img" aria-label="scatter plot preview">
+      <line x1="26" y1="134" x2="318" y2="134" stroke="#d8d0c4" stroke-width="1"/>
+      <line x1="26" y1="22" x2="26" y2="134" stroke="#d8d0c4" stroke-width="1"/>
+      <circle cx="54" cy="88" r="9" fill="#92ADC0" opacity="0.92" />
+<circle cx="86" cy="56" r="9" fill="#9DBCBA" opacity="0.92" />
+<circle cx="118" cy="116" r="9" fill="#C8D6E3" opacity="0.92" />
+<circle cx="150" cy="74" r="9" fill="#B7C9A5" opacity="0.92" />
+<circle cx="182" cy="132" r="9" fill="#F1B04A" opacity="0.92" />
+<circle cx="214" cy="44" r="9" fill="#EB6E51" opacity="0.92" />
+<circle cx="246" cy="104" r="9" fill="#D98E88" opacity="0.92" />
+<circle cx="278" cy="66" r="9" fill="#F3B1A6" opacity="0.92" />
+    </svg></div>
+        <div class="preview-card"><h3>Colour / line</h3><svg viewBox="0 0 380 150" role="img" aria-label="line chart preview">
+      <line x1="18" y1="132" x2="360" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <line x1="18" y1="20" x2="18" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <polyline points="28,86.7 70,72.7 112,78.7 154,56.7 196,62.7 238,40.7 280,52.7 322,34.7" fill="none" stroke="#92ADC0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,87.8 70,73.8 112,79.8 154,57.8 196,63.8 238,41.8 280,53.8 322,35.8" fill="none" stroke="#9DBCBA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,88.9 70,74.9 112,80.9 154,58.9 196,64.9 238,42.9 280,54.9 322,36.9" fill="none" stroke="#C8D6E3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,90 70,76 112,82 154,60 196,66 238,44 280,56 322,38" fill="none" stroke="#B7C9A5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,91.1 70,77.1 112,83.1 154,61.1 196,67.1 238,45.1 280,57.1 322,39.1" fill="none" stroke="#F1B04A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,92.2 70,78.2 112,84.2 154,62.2 196,68.2 238,46.2 280,58.2 322,40.2" fill="none" stroke="#EB6E51" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,93.3 70,79.3 112,85.3 154,63.3 196,69.3 238,47.3 280,59.3 322,41.3" fill="none" stroke="#D98E88" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,94.4 70,80.4 112,86.4 154,64.4 196,70.4 238,48.4 280,60.4 322,42.4" fill="none" stroke="#F3B1A6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+    </svg></div>
+      </div>
+    </section>
+<section class="palette-section">
+      <div class="palette-head">
+        <div>
+          <p class="eyebrow">soft / mist</p>
+          <h2>Soft Mist <span>soft_mist</span></h2>
+          <p>Low-conflict mist-like soft branch with lavender, fog blue, sand, and pale pink.</p>
+        </div>
+      </div>
+      <div class="swatches"><div class="swatch-card"><div class="chip" style="background:#B6A2C9"></div><code>#B6A2C9</code></div>
+<div class="swatch-card"><div class="chip" style="background:#C5B4D8"></div><code>#C5B4D8</code></div>
+<div class="swatch-card"><div class="chip" style="background:#CDDDE5"></div><code>#CDDDE5</code></div>
+<div class="swatch-card"><div class="chip" style="background:#DCE7EA"></div><code>#DCE7EA</code></div>
+<div class="swatch-card"><div class="chip" style="background:#EEE9E0"></div><code>#EEE9E0</code></div>
+<div class="swatch-card"><div class="chip" style="background:#E7D3C9"></div><code>#E7D3C9</code></div>
+<div class="swatch-card"><div class="chip" style="background:#F4C1BF"></div><code>#F4C1BF</code></div>
+<div class="swatch-card"><div class="chip" style="background:#DDB8C7"></div><code>#DDB8C7</code></div></div>
+      <div class="preview-grid">
+        <div class="preview-card"><h3>Fill / bar</h3><svg viewBox="0 0 380 150" role="img" aria-label="bar chart preview">
+      <line x1="18" y1="132" x2="360" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <rect x="28" y="72" width="28" height="58" rx="7" fill="#B6A2C9" />
+<rect x="70" y="54" width="28" height="76" rx="7" fill="#C5B4D8" />
+<rect x="112" y="64" width="28" height="66" rx="7" fill="#CDDDE5" />
+<rect x="154" y="42" width="28" height="88" rx="7" fill="#DCE7EA" />
+<rect x="196" y="58" width="28" height="72" rx="7" fill="#EEE9E0" />
+<rect x="238" y="34" width="28" height="96" rx="7" fill="#E7D3C9" />
+<rect x="280" y="66" width="28" height="64" rx="7" fill="#F4C1BF" />
+<rect x="322" y="48" width="28" height="82" rx="7" fill="#DDB8C7" />
+    </svg></div>
+        <div class="preview-card"><h3>Colour / scatter</h3><svg viewBox="0 0 340 160" role="img" aria-label="scatter plot preview">
+      <line x1="26" y1="134" x2="318" y2="134" stroke="#d8d0c4" stroke-width="1"/>
+      <line x1="26" y1="22" x2="26" y2="134" stroke="#d8d0c4" stroke-width="1"/>
+      <circle cx="54" cy="88" r="9" fill="#B6A2C9" opacity="0.92" />
+<circle cx="86" cy="56" r="9" fill="#C5B4D8" opacity="0.92" />
+<circle cx="118" cy="116" r="9" fill="#CDDDE5" opacity="0.92" />
+<circle cx="150" cy="74" r="9" fill="#DCE7EA" opacity="0.92" />
+<circle cx="182" cy="132" r="9" fill="#EEE9E0" opacity="0.92" />
+<circle cx="214" cy="44" r="9" fill="#E7D3C9" opacity="0.92" />
+<circle cx="246" cy="104" r="9" fill="#F4C1BF" opacity="0.92" />
+<circle cx="278" cy="66" r="9" fill="#DDB8C7" opacity="0.92" />
+    </svg></div>
+        <div class="preview-card"><h3>Colour / line</h3><svg viewBox="0 0 380 150" role="img" aria-label="line chart preview">
+      <line x1="18" y1="132" x2="360" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <line x1="18" y1="20" x2="18" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <polyline points="28,86.7 70,72.7 112,78.7 154,56.7 196,62.7 238,40.7 280,52.7 322,34.7" fill="none" stroke="#B6A2C9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,87.8 70,73.8 112,79.8 154,57.8 196,63.8 238,41.8 280,53.8 322,35.8" fill="none" stroke="#C5B4D8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,88.9 70,74.9 112,80.9 154,58.9 196,64.9 238,42.9 280,54.9 322,36.9" fill="none" stroke="#CDDDE5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,90 70,76 112,82 154,60 196,66 238,44 280,56 322,38" fill="none" stroke="#DCE7EA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,91.1 70,77.1 112,83.1 154,61.1 196,67.1 238,45.1 280,57.1 322,39.1" fill="none" stroke="#EEE9E0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,92.2 70,78.2 112,84.2 154,62.2 196,68.2 238,46.2 280,58.2 322,40.2" fill="none" stroke="#E7D3C9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,93.3 70,79.3 112,85.3 154,63.3 196,69.3 238,47.3 280,59.3 322,41.3" fill="none" stroke="#F4C1BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,94.4 70,80.4 112,86.4 154,64.4 196,70.4 238,48.4 280,60.4 322,42.4" fill="none" stroke="#DDB8C7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+    </svg></div>
+      </div>
+    </section>
+<section class="palette-section">
+      <div class="palette-head">
+        <div>
+          <p class="eyebrow">vivid / core</p>
+          <h2>Vivid Core <span>vivid_core</span></h2>
+          <p>Default vivid branch with a navy-blue structure and a controlled coral-red anchor.</p>
+        </div>
+      </div>
+      <div class="swatches"><div class="swatch-card"><div class="chip" style="background:#1D3557"></div><code>#1D3557</code></div>
+<div class="swatch-card"><div class="chip" style="background:#355C7D"></div><code>#355C7D</code></div>
+<div class="swatch-card"><div class="chip" style="background:#457B9D"></div><code>#457B9D</code></div>
+<div class="swatch-card"><div class="chip" style="background:#7FAFC4"></div><code>#7FAFC4</code></div>
+<div class="swatch-card"><div class="chip" style="background:#A8DADC"></div><code>#A8DADC</code></div>
+<div class="swatch-card"><div class="chip" style="background:#F1FAEE"></div><code>#F1FAEE</code></div>
+<div class="swatch-card"><div class="chip" style="background:#E98A7A"></div><code>#E98A7A</code></div>
+<div class="swatch-card"><div class="chip" style="background:#E63946"></div><code>#E63946</code></div></div>
+      <div class="preview-grid">
+        <div class="preview-card"><h3>Fill / bar</h3><svg viewBox="0 0 380 150" role="img" aria-label="bar chart preview">
+      <line x1="18" y1="132" x2="360" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <rect x="28" y="72" width="28" height="58" rx="7" fill="#1D3557" />
+<rect x="70" y="54" width="28" height="76" rx="7" fill="#355C7D" />
+<rect x="112" y="64" width="28" height="66" rx="7" fill="#457B9D" />
+<rect x="154" y="42" width="28" height="88" rx="7" fill="#7FAFC4" />
+<rect x="196" y="58" width="28" height="72" rx="7" fill="#A8DADC" />
+<rect x="238" y="34" width="28" height="96" rx="7" fill="#F1FAEE" />
+<rect x="280" y="66" width="28" height="64" rx="7" fill="#E98A7A" />
+<rect x="322" y="48" width="28" height="82" rx="7" fill="#E63946" />
+    </svg></div>
+        <div class="preview-card"><h3>Colour / scatter</h3><svg viewBox="0 0 340 160" role="img" aria-label="scatter plot preview">
+      <line x1="26" y1="134" x2="318" y2="134" stroke="#d8d0c4" stroke-width="1"/>
+      <line x1="26" y1="22" x2="26" y2="134" stroke="#d8d0c4" stroke-width="1"/>
+      <circle cx="54" cy="88" r="9" fill="#1D3557" opacity="0.92" />
+<circle cx="86" cy="56" r="9" fill="#355C7D" opacity="0.92" />
+<circle cx="118" cy="116" r="9" fill="#457B9D" opacity="0.92" />
+<circle cx="150" cy="74" r="9" fill="#7FAFC4" opacity="0.92" />
+<circle cx="182" cy="132" r="9" fill="#A8DADC" opacity="0.92" />
+<circle cx="214" cy="44" r="9" fill="#F1FAEE" opacity="0.92" />
+<circle cx="246" cy="104" r="9" fill="#E98A7A" opacity="0.92" />
+<circle cx="278" cy="66" r="9" fill="#E63946" opacity="0.92" />
+    </svg></div>
+        <div class="preview-card"><h3>Colour / line</h3><svg viewBox="0 0 380 150" role="img" aria-label="line chart preview">
+      <line x1="18" y1="132" x2="360" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <line x1="18" y1="20" x2="18" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <polyline points="28,86.7 70,72.7 112,78.7 154,56.7 196,62.7 238,40.7 280,52.7 322,34.7" fill="none" stroke="#1D3557" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,87.8 70,73.8 112,79.8 154,57.8 196,63.8 238,41.8 280,53.8 322,35.8" fill="none" stroke="#355C7D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,88.9 70,74.9 112,80.9 154,58.9 196,64.9 238,42.9 280,54.9 322,36.9" fill="none" stroke="#457B9D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,90 70,76 112,82 154,60 196,66 238,44 280,56 322,38" fill="none" stroke="#7FAFC4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,91.1 70,77.1 112,83.1 154,61.1 196,67.1 238,45.1 280,57.1 322,39.1" fill="none" stroke="#A8DADC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,92.2 70,78.2 112,84.2 154,62.2 196,68.2 238,46.2 280,58.2 322,40.2" fill="none" stroke="#F1FAEE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,93.3 70,79.3 112,85.3 154,63.3 196,69.3 238,47.3 280,59.3 322,41.3" fill="none" stroke="#E98A7A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,94.4 70,80.4 112,86.4 154,64.4 196,70.4 238,48.4 280,60.4 322,42.4" fill="none" stroke="#E63946" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+    </svg></div>
+      </div>
+    </section>
+<section class="palette-section">
+      <div class="palette-head">
+        <div>
+          <p class="eyebrow">vivid / fresh</p>
+          <h2>Vivid Fresh <span>vivid_fresh</span></h2>
+          <p>Fresh vivid branch with teal, cyan, cool white, peach, and warm terracotta.</p>
+        </div>
+      </div>
+      <div class="swatches"><div class="swatch-card"><div class="chip" style="background:#0F6D7A"></div><code>#0F6D7A</code></div>
+<div class="swatch-card"><div class="chip" style="background:#4D9BA0"></div><code>#4D9BA0</code></div>
+<div class="swatch-card"><div class="chip" style="background:#83C5BE"></div><code>#83C5BE</code></div>
+<div class="swatch-card"><div class="chip" style="background:#B8DCD7"></div><code>#B8DCD7</code></div>
+<div class="swatch-card"><div class="chip" style="background:#EDF6F9"></div><code>#EDF6F9</code></div>
+<div class="swatch-card"><div class="chip" style="background:#FFDDD2"></div><code>#FFDDD2</code></div>
+<div class="swatch-card"><div class="chip" style="background:#F2B59A"></div><code>#F2B59A</code></div>
+<div class="swatch-card"><div class="chip" style="background:#E29578"></div><code>#E29578</code></div></div>
+      <div class="preview-grid">
+        <div class="preview-card"><h3>Fill / bar</h3><svg viewBox="0 0 380 150" role="img" aria-label="bar chart preview">
+      <line x1="18" y1="132" x2="360" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <rect x="28" y="72" width="28" height="58" rx="7" fill="#0F6D7A" />
+<rect x="70" y="54" width="28" height="76" rx="7" fill="#4D9BA0" />
+<rect x="112" y="64" width="28" height="66" rx="7" fill="#83C5BE" />
+<rect x="154" y="42" width="28" height="88" rx="7" fill="#B8DCD7" />
+<rect x="196" y="58" width="28" height="72" rx="7" fill="#EDF6F9" />
+<rect x="238" y="34" width="28" height="96" rx="7" fill="#FFDDD2" />
+<rect x="280" y="66" width="28" height="64" rx="7" fill="#F2B59A" />
+<rect x="322" y="48" width="28" height="82" rx="7" fill="#E29578" />
+    </svg></div>
+        <div class="preview-card"><h3>Colour / scatter</h3><svg viewBox="0 0 340 160" role="img" aria-label="scatter plot preview">
+      <line x1="26" y1="134" x2="318" y2="134" stroke="#d8d0c4" stroke-width="1"/>
+      <line x1="26" y1="22" x2="26" y2="134" stroke="#d8d0c4" stroke-width="1"/>
+      <circle cx="54" cy="88" r="9" fill="#0F6D7A" opacity="0.92" />
+<circle cx="86" cy="56" r="9" fill="#4D9BA0" opacity="0.92" />
+<circle cx="118" cy="116" r="9" fill="#83C5BE" opacity="0.92" />
+<circle cx="150" cy="74" r="9" fill="#B8DCD7" opacity="0.92" />
+<circle cx="182" cy="132" r="9" fill="#EDF6F9" opacity="0.92" />
+<circle cx="214" cy="44" r="9" fill="#FFDDD2" opacity="0.92" />
+<circle cx="246" cy="104" r="9" fill="#F2B59A" opacity="0.92" />
+<circle cx="278" cy="66" r="9" fill="#E29578" opacity="0.92" />
+    </svg></div>
+        <div class="preview-card"><h3>Colour / line</h3><svg viewBox="0 0 380 150" role="img" aria-label="line chart preview">
+      <line x1="18" y1="132" x2="360" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <line x1="18" y1="20" x2="18" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <polyline points="28,86.7 70,72.7 112,78.7 154,56.7 196,62.7 238,40.7 280,52.7 322,34.7" fill="none" stroke="#0F6D7A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,87.8 70,73.8 112,79.8 154,57.8 196,63.8 238,41.8 280,53.8 322,35.8" fill="none" stroke="#4D9BA0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,88.9 70,74.9 112,80.9 154,58.9 196,64.9 238,42.9 280,54.9 322,36.9" fill="none" stroke="#83C5BE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,90 70,76 112,82 154,60 196,66 238,44 280,56 322,38" fill="none" stroke="#B8DCD7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,91.1 70,77.1 112,83.1 154,61.1 196,67.1 238,45.1 280,57.1 322,39.1" fill="none" stroke="#EDF6F9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,92.2 70,78.2 112,84.2 154,62.2 196,68.2 238,46.2 280,58.2 322,40.2" fill="none" stroke="#FFDDD2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,93.3 70,79.3 112,85.3 154,63.3 196,69.3 238,47.3 280,59.3 322,41.3" fill="none" stroke="#F2B59A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,94.4 70,80.4 112,86.4 154,64.4 196,70.4 238,48.4 280,60.4 322,42.4" fill="none" stroke="#E29578" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+    </svg></div>
+      </div>
+    </section>
+<section class="palette-section">
+      <div class="palette-head">
+        <div>
+          <p class="eyebrow">vivid / drama</p>
+          <h2>Vivid Drama <span>vivid_drama</span></h2>
+          <p>Mature high-separation vivid branch with smoky blue, muted teal, moss, aged amber, terracotta, and violet.</p>
+        </div>
+      </div>
+      <div class="swatches"><div class="swatch-card"><div class="chip" style="background:#415A80"></div><code>#415A80</code></div>
+<div class="swatch-card"><div class="chip" style="background:#4B6A97"></div><code>#4B6A97</code></div>
+<div class="swatch-card"><div class="chip" style="background:#5B9A90"></div><code>#5B9A90</code></div>
+<div class="swatch-card"><div class="chip" style="background:#8FAF62"></div><code>#8FAF62</code></div>
+<div class="swatch-card"><div class="chip" style="background:#D3A35A"></div><code>#D3A35A</code></div>
+<div class="swatch-card"><div class="chip" style="background:#C97B5D"></div><code>#C97B5D</code></div>
+<div class="swatch-card"><div class="chip" style="background:#B27B86"></div><code>#B27B86</code></div>
+<div class="swatch-card"><div class="chip" style="background:#8C6492"></div><code>#8C6492</code></div></div>
+      <div class="preview-grid">
+        <div class="preview-card"><h3>Fill / bar</h3><svg viewBox="0 0 380 150" role="img" aria-label="bar chart preview">
+      <line x1="18" y1="132" x2="360" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <rect x="28" y="72" width="28" height="58" rx="7" fill="#415A80" />
+<rect x="70" y="54" width="28" height="76" rx="7" fill="#4B6A97" />
+<rect x="112" y="64" width="28" height="66" rx="7" fill="#5B9A90" />
+<rect x="154" y="42" width="28" height="88" rx="7" fill="#8FAF62" />
+<rect x="196" y="58" width="28" height="72" rx="7" fill="#D3A35A" />
+<rect x="238" y="34" width="28" height="96" rx="7" fill="#C97B5D" />
+<rect x="280" y="66" width="28" height="64" rx="7" fill="#B27B86" />
+<rect x="322" y="48" width="28" height="82" rx="7" fill="#8C6492" />
+    </svg></div>
+        <div class="preview-card"><h3>Colour / scatter</h3><svg viewBox="0 0 340 160" role="img" aria-label="scatter plot preview">
+      <line x1="26" y1="134" x2="318" y2="134" stroke="#d8d0c4" stroke-width="1"/>
+      <line x1="26" y1="22" x2="26" y2="134" stroke="#d8d0c4" stroke-width="1"/>
+      <circle cx="54" cy="88" r="9" fill="#415A80" opacity="0.92" />
+<circle cx="86" cy="56" r="9" fill="#4B6A97" opacity="0.92" />
+<circle cx="118" cy="116" r="9" fill="#5B9A90" opacity="0.92" />
+<circle cx="150" cy="74" r="9" fill="#8FAF62" opacity="0.92" />
+<circle cx="182" cy="132" r="9" fill="#D3A35A" opacity="0.92" />
+<circle cx="214" cy="44" r="9" fill="#C97B5D" opacity="0.92" />
+<circle cx="246" cy="104" r="9" fill="#B27B86" opacity="0.92" />
+<circle cx="278" cy="66" r="9" fill="#8C6492" opacity="0.92" />
+    </svg></div>
+        <div class="preview-card"><h3>Colour / line</h3><svg viewBox="0 0 380 150" role="img" aria-label="line chart preview">
+      <line x1="18" y1="132" x2="360" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <line x1="18" y1="20" x2="18" y2="132" stroke="#d8d0c4" stroke-width="1"/>
+      <polyline points="28,86.7 70,72.7 112,78.7 154,56.7 196,62.7 238,40.7 280,52.7 322,34.7" fill="none" stroke="#415A80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,87.8 70,73.8 112,79.8 154,57.8 196,63.8 238,41.8 280,53.8 322,35.8" fill="none" stroke="#4B6A97" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,88.9 70,74.9 112,80.9 154,58.9 196,64.9 238,42.9 280,54.9 322,36.9" fill="none" stroke="#5B9A90" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,90 70,76 112,82 154,60 196,66 238,44 280,56 322,38" fill="none" stroke="#8FAF62" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,91.1 70,77.1 112,83.1 154,61.1 196,67.1 238,45.1 280,57.1 322,39.1" fill="none" stroke="#D3A35A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,92.2 70,78.2 112,84.2 154,62.2 196,68.2 238,46.2 280,58.2 322,40.2" fill="none" stroke="#C97B5D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,93.3 70,79.3 112,85.3 154,63.3 196,69.3 238,47.3 280,59.3 322,41.3" fill="none" stroke="#B27B86" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+<polyline points="28,94.4 70,80.4 112,86.4 154,64.4 196,70.4 238,48.4 280,60.4 322,42.4" fill="none" stroke="#8C6492" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>
+    </svg></div>
+      </div>
+    </section>
+    <p class="footer">Generated by inst/gallery/build_simple_modes_gallery.R</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+Package: ColorPhage
+Title: High-Aesthetic Palettes for Scientific Figures
+Version: 0.0.0.9000
+Authors@R: person(given = "ColorPhage", family = "Authors", role = c("aut", "cre"), email = "colorphage@example.com")
+Author: ColorPhage Authors
+Maintainer: ColorPhage Authors <colorphage@example.com>
+Description: Provides high-aesthetic, publication-oriented colour palettes
+    for scientific figures. The first development version focuses on simple
+    soft and vivid modes, with ggplot2 scale helpers for colour and fill
+    aesthetics.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Depends:
+    R (>= 4.1)
+Suggests:
+    ggplot2,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

@@ -1,0 +1,4 @@
+export(available_phage_palettes)
+export(phage_palette)
+export(scale_color_phage)
+export(scale_fill_phage)

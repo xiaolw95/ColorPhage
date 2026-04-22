@@ -1,0 +1,18 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+Thumbs.db
+
+# R package build artifacts
+*.tar.gz
+*.Rcheck/
+
+# Local package management
+renv/library/
+renv/staging/
+
+# Local scratch files
+trash/
+references/
