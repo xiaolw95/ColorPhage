@@ -923,6 +923,31 @@
   - 每组 4 类真实 `ggplot2` 图
   - 合计 60 张 SVG 图像
 
+#### 3.57 启动第四个进阶 family：retro
+
+- 当前建议第四个 family 选择：
+  - `retro`
+- 选择原因：
+  - `forest`、`mineral`、`ocean` 分别覆盖自然、理性、清洁冷色语境
+  - `retro` 可补足温暖、沉静、叙事型科研图语境
+  - 适合综述图、机制图、长期随访、时间序列和图文摘要
+- 当前创建 3 个候选分支：
+  - `retro_film`
+  - `retro_paper`
+  - `retro_signal`
+- 已新增 `retro` 候选草案：
+  - [retro_family_candidates_draft.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\retro_family_candidates_draft.md)
+- 已新增 `retro` 候选预览生成脚本：
+  - [build_retro_family_candidates_preview.R](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\build_retro_family_candidates_preview.R)
+- 已生成预览页面：
+  - [retro_family_candidates_preview.html](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\retro_family_candidates_preview.html)
+- 当前预览内容：
+  - 每个候选 `n = 8`
+  - 每个候选包含 bar、scatter、line、UMAP-like 四类真实 `ggplot2` 图
+  - 合计 12 张 SVG 图像资产
+- 图像资产目录：
+  - [retro_family_preview_figures](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\retro_family_preview_figures)
+
 ## 4. 当前已存在核心文档
 
 - [requirements_blueprint_draft.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\planning\requirements_blueprint_draft.md)

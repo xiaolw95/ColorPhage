@@ -284,6 +284,8 @@
 - 已生成 `ocean` family 三个候选分支的真实 `ggplot2` 预览
 - `ocean_current`、`ocean_glass`、`ocean_depth` 已写入 R 包
 - 当前包内 palette 数量为 15 组
+- 第四个进阶 family 已启动，当前候选方向为 `retro`
+- 已生成 `retro` family 三个候选分支的真实 `ggplot2` 预览
 
 ## 7. 当前结论
 
@@ -291,6 +293,6 @@
 
 更合理的推进方式是：
 
-> 先完成 `ocean` 接入后的包检查与同步，然后继续下一个进阶 family。
+> 先生成并审阅 `retro` 三个候选分支的真实 `ggplot2` 预览，再决定是否写入 R 包。
 
 当前 ColorPhage 已经进入“可版本化迭代的 R 包 MVP”阶段。
