@@ -863,6 +863,31 @@
   - 每组 4 类真实 `ggplot2` 图
   - 合计 48 张 SVG 图像
 
+#### 3.55 启动第三个进阶 family：ocean
+
+- 当前建议第三个 family 选择：
+  - `ocean`
+- 选择原因：
+  - `forest` 已覆盖自然有机语境
+  - `mineral` 已覆盖冷静理性和方法学语境
+  - `ocean` 可覆盖清洁、流动、偏冷、组学与空间结构语境
+- 当前创建 3 个候选分支：
+  - `ocean_current`
+  - `ocean_glass`
+  - `ocean_depth`
+- 已新增 `ocean` 候选草案：
+  - [ocean_family_candidates_draft.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\ocean_family_candidates_draft.md)
+- 已新增 `ocean` 候选预览生成脚本：
+  - [build_ocean_family_candidates_preview.R](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\build_ocean_family_candidates_preview.R)
+- 已生成预览页面：
+  - [ocean_family_candidates_preview.html](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\ocean_family_candidates_preview.html)
+- 当前预览内容：
+  - 每个候选 `n = 8`
+  - 每个候选包含 bar、scatter、line、UMAP-like 四类真实 `ggplot2` 图
+  - 合计 12 张 SVG 图像资产
+- 图像资产目录：
+  - [ocean_family_preview_figures](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\ocean_family_preview_figures)
+
 ## 4. 当前已存在核心文档
 
 - [requirements_blueprint_draft.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\planning\requirements_blueprint_draft.md)
