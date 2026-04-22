@@ -1,13 +1,13 @@
 # ColorPhage
 
-ColorPhage is an early-stage R package for high-aesthetic scientific figure palettes. The current MVP includes simple `soft` and `vivid` modes plus the advanced `forest`, `mineral`, and `ocean` families for publication-oriented discrete colour palettes.
+ColorPhage is an early-stage R package for high-aesthetic scientific figure palettes. The current MVP includes simple `soft` and `vivid` modes plus the advanced `forest`, `mineral`, `ocean`, and `retro` families for publication-oriented discrete colour palettes.
 
 ## Current Scope
 
 - `phage_palette()` returns colour vectors.
 - `scale_color_phage()` and `scale_fill_phage()` provide ggplot2 discrete scales.
-- The MVP includes 15 confirmed `n = 8` palettes.
-- The first three advanced families, `forest`, `mineral`, and `ocean`, are implemented.
+- The MVP includes 18 confirmed `n = 8` palettes.
+- The first four advanced families, `forest`, `mineral`, `ocean`, and `retro`, are implemented.
 - Continuous palettes, diverging palettes, and generation features are planned but not implemented yet.
 
 ## Installation
@@ -30,6 +30,7 @@ phage_palette(8, mode = "vivid", variant = "drama")
 phage_palette(8, mode = "forest", variant = "canopy")
 phage_palette(8, mode = "mineral", variant = "slate")
 phage_palette(8, mode = "ocean", variant = "current")
+phage_palette(8, mode = "retro", variant = "film")
 phage_palette(8, palette = "soft_harbor")
 ```
 
@@ -58,6 +59,10 @@ ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
 ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
   geom_point(size = 3) +
   scale_color_phage(mode = "ocean")
+
+ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
+  geom_point(size = 3) +
+  scale_color_phage(mode = "retro")
 ```
 
 ## Available Palettes
@@ -83,6 +88,9 @@ Current palette IDs:
 - `ocean_current`
 - `ocean_glass`
 - `ocean_depth`
+- `retro_film`
+- `retro_paper`
+- `retro_signal`
 
 Default mappings:
 
@@ -91,6 +99,7 @@ Default mappings:
 - `mode = "forest"` uses `forest_canopy`
 - `mode = "mineral"` uses `mineral_slate`
 - `mode = "ocean"` uses `ocean_current`
+- `mode = "retro"` uses `retro_film`
 
 ## Development Notes
 

@@ -948,6 +948,26 @@
 - 图像资产目录：
   - [retro_family_preview_figures](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\retro_family_preview_figures)
 
+#### 3.58 启动第五与第六个进阶 family：cinema 与 mist
+
+- 用户要求：
+  - 一次性对剩下的几个 family 进行编写
+- 当前采取的执行方式：
+  - 将已审核通过的 `retro` 写入 R 包
+  - 批量创建剩余 `cinema` 与 `mist` 的候选草案和真实预览
+- 当前建议第五个 family：
+  - `cinema`
+- 当前创建 3 个候选分支：
+  - `cinema_noir`
+  - `cinema_marquee`
+  - `cinema_velvet`
+- 当前建议第六个 family：
+  - `mist`
+- 当前创建 3 个候选分支：
+  - `mist_cloud`
+  - `mist_lilac`
+  - `mist_shell`
+
 ## 4. 当前已存在核心文档
 
 - [requirements_blueprint_draft.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\planning\requirements_blueprint_draft.md)

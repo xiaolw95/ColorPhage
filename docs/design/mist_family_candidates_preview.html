@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ColorPhage Mist Family Candidates</title>
+  <style>
+    :root { --bg: #f5f4f1; --panel: #fffdf8; --ink: #3b4046; --muted: #7b7d82; --line: #e2e0da; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; color: var(--ink); background: radial-gradient(circle at 10% 10%, rgba(158,166,196,.16), transparent 26%), radial-gradient(circle at 86% 6%, rgba(232,229,222,.34), transparent 24%), radial-gradient(circle at 78% 88%, rgba(201,183,196,.18), transparent 24%), var(--bg); line-height: 1.55; }
+    .wrap { width: min(1280px, calc(100% - 48px)); margin: 36px auto 72px; }
+    .hero, .palette-section { background: rgba(255,253,248,.94); border: 1px solid var(--line); border-radius: 30px; box-shadow: 0 22px 54px rgba(90,92,98,.08); }
+    .hero { padding: 34px 36px; margin-bottom: 22px; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: clamp(34px, 5vw, 58px); letter-spacing: .01em; margin-bottom: 12px; }
+    .hero p { max-width: 900px; color: var(--muted); font-size: 17px; }
+    .mode-strip { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .pill { border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; background: #faf8f3; color: var(--muted); font-size: 14px; }
+    .palette-section { padding: 26px; margin-top: 20px; }
+    .palette-head { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
+    .eyebrow { color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; margin-bottom: 6px; }
+    h2 { font-size: clamp(24px, 3vw, 34px); margin-bottom: 8px; }
+    h2 span { font-size: 14px; color: var(--muted); font-weight: 500; border: 1px solid var(--line); border-radius: 999px; padding: 5px 10px; vertical-align: middle; margin-left: 8px; }
+    .palette-head p:last-child { color: var(--muted); max-width: 820px; }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); gap: 12px; margin-bottom: 18px; }
+    .swatch-card { border: 1px solid var(--line); background: #fff; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 18px rgba(50,60,70,.05); }
+    .chip { height: 98px; }
+    .swatch-card code { display: block; padding: 10px 12px 12px; font-size: 12px; color: var(--muted); background: #faf8f3; }
+    .preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .preview-card { border: 1px solid var(--line); background: linear-gradient(180deg, #fff, #faf8f3); border-radius: 22px; padding: 16px 16px 12px; overflow: hidden; }
+    .preview-card h3 { font-size: 15px; color: var(--muted); margin-bottom: 10px; }
+    .preview-card img { width: 100%; height: auto; display: block; border-radius: 14px; background: #fffdf8; }
+    .footer { color: var(--muted); text-align: center; padding: 26px 0 0; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>ColorPhage Mist Family Candidates</h1>
+      <p>这是第六个进阶 family 的候选预览。Mist 用低冲突雾蓝、浅灰绿、淡紫和柔和沙色构成轻盈、长期阅读友好的科研配色，目标是与 soft 拉开层次而不是简单重复。</p>
+      <div class="mode-strip">
+        <span class="pill">advanced family: mist</span>
+        <span class="pill">candidate count: 3</span>
+        <span class="pill">n = 8</span>
+        <span class="pill">plots rendered by ggplot2</span>
+      </div>
+    </section>
+    <section class="palette-section"><div class="palette-head"><div><p class="eyebrow">advanced family / mist</p><h2>Mist Cloud <span>mist_cloud</span></h2><p>云层与浅雾：适合主文统计图、补充材料趋势图和轻量分层图。</p></div></div><div class="swatches"><div class="swatch-card"><div class="chip" style="background:#8CA0B3"></div><code>#8CA0B3</code></div>
+<div class="swatch-card"><div class="chip" style="background:#B3C0C9"></div><code>#B3C0C9</code></div>
+<div class="swatch-card"><div class="chip" style="background:#D8E0DE"></div><code>#D8E0DE</code></div>
+<div class="swatch-card"><div class="chip" style="background:#E8E5DE"></div><code>#E8E5DE</code></div>
+<div class="swatch-card"><div class="chip" style="background:#E0D1C9"></div><code>#E0D1C9</code></div>
+<div class="swatch-card"><div class="chip" style="background:#C9B7C4"></div><code>#C9B7C4</code></div>
+<div class="swatch-card"><div class="chip" style="background:#A8B2C7"></div><code>#A8B2C7</code></div>
+<div class="swatch-card"><div class="chip" style="background:#CFC6D8"></div><code>#CFC6D8</code></div></div><div class="preview-grid"><div class="preview-card"><h3>Fill / bar</h3><img src="mist_family_preview_figures/mist_cloud_bar.svg" alt="Fill / bar"></div>
+<div class="preview-card"><h3>Colour / scatter</h3><img src="mist_family_preview_figures/mist_cloud_scatter.svg" alt="Colour / scatter"></div>
+<div class="preview-card"><h3>Colour / line</h3><img src="mist_family_preview_figures/mist_cloud_line.svg" alt="Colour / line"></div>
+<div class="preview-card"><h3>UMAP-like</h3><img src="mist_family_preview_figures/mist_cloud_umap.svg" alt="UMAP-like"></div></div></section>
+<section class="palette-section"><div class="palette-head"><div><p class="eyebrow">advanced family / mist</p><h2>Mist Lilac <span>mist_lilac</span></h2><p>淡紫与雾蓝：适合多时间点变化图、温和细胞亚群比较和低刺激主文图。</p></div></div><div class="swatches"><div class="swatch-card"><div class="chip" style="background:#9EA6C4"></div><code>#9EA6C4</code></div>
+<div class="swatch-card"><div class="chip" style="background:#C0C6D8"></div><code>#C0C6D8</code></div>
+<div class="swatch-card"><div class="chip" style="background:#DDE2E8"></div><code>#DDE2E8</code></div>
+<div class="swatch-card"><div class="chip" style="background:#E9E6E1"></div><code>#E9E6E1</code></div>
+<div class="swatch-card"><div class="chip" style="background:#D9CFD4"></div><code>#D9CFD4</code></div>
+<div class="swatch-card"><div class="chip" style="background:#C7B8C8"></div><code>#C7B8C8</code></div>
+<div class="swatch-card"><div class="chip" style="background:#B6C6D4"></div><code>#B6C6D4</code></div>
+<div class="swatch-card"><div class="chip" style="background:#E0D7E5"></div><code>#E0D7E5</code></div></div><div class="preview-grid"><div class="preview-card"><h3>Fill / bar</h3><img src="mist_family_preview_figures/mist_lilac_bar.svg" alt="Fill / bar"></div>
+<div class="preview-card"><h3>Colour / scatter</h3><img src="mist_family_preview_figures/mist_lilac_scatter.svg" alt="Colour / scatter"></div>
+<div class="preview-card"><h3>Colour / line</h3><img src="mist_family_preview_figures/mist_lilac_line.svg" alt="Colour / line"></div>
+<div class="preview-card"><h3>UMAP-like</h3><img src="mist_family_preview_figures/mist_lilac_umap.svg" alt="UMAP-like"></div></div></section>
+<section class="palette-section"><div class="palette-head"><div><p class="eyebrow">advanced family / mist</p><h2>Mist Shell <span>mist_shell</span></h2><p>贝壳白与雾灰绿：适合机制模块图、综述补充图和长期阅读统计图。</p></div></div><div class="swatches"><div class="swatch-card"><div class="chip" style="background:#95A7A0"></div><code>#95A7A0</code></div>
+<div class="swatch-card"><div class="chip" style="background:#B9C7C1"></div><code>#B9C7C1</code></div>
+<div class="swatch-card"><div class="chip" style="background:#DDE3DE"></div><code>#DDE3DE</code></div>
+<div class="swatch-card"><div class="chip" style="background:#EAE2D7"></div><code>#EAE2D7</code></div>
+<div class="swatch-card"><div class="chip" style="background:#D8C7BC"></div><code>#D8C7BC</code></div>
+<div class="swatch-card"><div class="chip" style="background:#C6B6AA"></div><code>#C6B6AA</code></div>
+<div class="swatch-card"><div class="chip" style="background:#B8C5D1"></div><code>#B8C5D1</code></div>
+<div class="swatch-card"><div class="chip" style="background:#D9D1DA"></div><code>#D9D1DA</code></div></div><div class="preview-grid"><div class="preview-card"><h3>Fill / bar</h3><img src="mist_family_preview_figures/mist_shell_bar.svg" alt="Fill / bar"></div>
+<div class="preview-card"><h3>Colour / scatter</h3><img src="mist_family_preview_figures/mist_shell_scatter.svg" alt="Colour / scatter"></div>
+<div class="preview-card"><h3>Colour / line</h3><img src="mist_family_preview_figures/mist_shell_line.svg" alt="Colour / line"></div>
+<div class="preview-card"><h3>UMAP-like</h3><img src="mist_family_preview_figures/mist_shell_umap.svg" alt="UMAP-like"></div></div></section>
+    <p class="footer">Generated by docs/design/build_mist_family_candidates_preview.R</p>
+  </main>
+</body>
+</html>

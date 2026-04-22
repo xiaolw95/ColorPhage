@@ -4,6 +4,7 @@ test_that("default palettes return expected lengths", {
   expect_length(phage_palette(8, mode = "forest"), 8)
   expect_length(phage_palette(8, mode = "mineral"), 8)
   expect_length(phage_palette(8, mode = "ocean"), 8)
+  expect_length(phage_palette(8, mode = "retro"), 8)
 })
 
 test_that("palette ids and variants resolve", {
@@ -39,6 +40,14 @@ test_that("palette ids and variants resolve", {
     phage_palette(2, palette = "ocean_depth"),
     c("#123B4A", "#245E70")
   )
+  expect_identical(
+    phage_palette(2, mode = "retro", variant = "film"),
+    c("#4A4E46", "#6F7764")
+  )
+  expect_identical(
+    phage_palette(2, palette = "retro_signal"),
+    c("#3F4A46", "#697464")
+  )
 })
 
 test_that("n above current MVP limit errors", {
@@ -49,6 +58,6 @@ test_that("available palette metadata includes current branches", {
   ids <- available_phage_palettes()$palette_id
   expect_true(all(c(
     "soft_harbor", "vivid_core", "vivid_drama",
-    "forest_canopy", "mineral_slate", "ocean_current"
+    "forest_canopy", "mineral_slate", "ocean_current", "retro_film"
   ) %in% ids))
 })

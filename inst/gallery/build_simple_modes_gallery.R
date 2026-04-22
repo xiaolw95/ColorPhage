@@ -39,7 +39,10 @@ palette_ids <- c(
   "mineral_oxide",
   "ocean_current",
   "ocean_glass",
-  "ocean_depth"
+  "ocean_depth",
+  "retro_film",
+  "retro_paper",
+  "retro_signal"
 )
 
 gallery_dir <- file.path(repo_root, "inst", "gallery")
@@ -325,13 +328,14 @@ html <- sprintf(
   <main class="wrap">
     <section class="hero">
       <h1>ColorPhage Palette Gallery</h1>
-      <p>这是 ColorPhage MVP 的真实 ggplot2 gallery，用来同时检查色块、填充图、散点图、折线图和 UMAP-like 场景中的实际观感。当前展示 3 组 soft、3 组 vivid、3 组 forest、3 组 mineral 与 3 组 ocean 的最终 n = 8 版本。</p>
+      <p>这是 ColorPhage MVP 的真实 ggplot2 gallery，用来同时检查色块、填充图、散点图、折线图和 UMAP-like 场景中的实际观感。当前展示 3 组 soft、3 组 vivid、3 组 forest、3 组 mineral、3 组 ocean 与 3 组 retro 的最终 n = 8 版本。</p>
       <div class="mode-strip">
         <span class="pill">soft default: soft_harbor</span>
         <span class="pill">vivid default: vivid_core</span>
         <span class="pill">forest default: forest_canopy</span>
         <span class="pill">mineral default: mineral_slate</span>
         <span class="pill">ocean default: ocean_current</span>
+        <span class="pill">retro default: retro_film</span>
         <span class="pill">current limit: n &lt;= 8</span>
         <span class="pill">plots rendered by ggplot2</span>
       </div>

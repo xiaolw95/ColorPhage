@@ -163,6 +163,39 @@
       "#123B4A", "#245E70", "#3F8292", "#7EB1B8",
       "#BFD8D6", "#5F7895", "#9B6E7B", "#D08965"
     )
+  ),
+  retro_film = list(
+    id = "retro_film",
+    mode = "retro",
+    variant = "film",
+    display_name = "Retro Film",
+    role = "Default retro branch with film green, paper sand, muted gold, warm terracotta, brick red, and dusky violet.",
+    colors = c(
+      "#4A4E46", "#6F7764", "#A19B72", "#D5C08A",
+      "#E6D5B8", "#C7835F", "#A6534B", "#6C596E"
+    )
+  ),
+  retro_paper = list(
+    id = "retro_paper",
+    mode = "retro",
+    variant = "paper",
+    display_name = "Retro Paper",
+    role = "Softer retro branch with paper browns, warm khaki, muted coral, rose-brown, and blue-grey balance.",
+    colors = c(
+      "#5F5A4A", "#8C8060", "#B8A878", "#E2D0A8",
+      "#D8BFA3", "#B87962", "#8E5A58", "#586A73"
+    )
+  ),
+  retro_signal = list(
+    id = "retro_signal",
+    mode = "retro",
+    variant = "signal",
+    display_name = "Retro Signal",
+    role = "Narrative retro branch with warm vintage structure and clearer emphasis colours for key results.",
+    colors = c(
+      "#3F4A46", "#697464", "#9B956C", "#D3AE62",
+      "#E4CDA6", "#C66F54", "#93485A", "#526A82"
+    )
   )
 )
 
@@ -171,5 +204,6 @@
   vivid = "vivid_core",
   forest = "forest_canopy",
   mineral = "mineral_slate",
-  ocean = "ocean_current"
+  ocean = "ocean_current",
+  retro = "retro_film"
 )
