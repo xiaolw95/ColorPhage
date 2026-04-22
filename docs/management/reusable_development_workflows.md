@@ -174,7 +174,13 @@ git push
 
 当前建议下一步：
 
-1. 将 [simple_modes_gallery.html](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\github_repo\ColorPhage\inst\gallery\simple_modes_gallery.html) 升级为真实 `ggplot2` 示例 gallery
-2. 或开始接入第一个进阶 family
+1. 人工审阅 [simple_modes_gallery.html](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\github_repo\ColorPhage\inst\gallery\simple_modes_gallery.html)
+2. 如 gallery 展示逻辑认可，开始接入第一个进阶 family
 3. 每完成一个稳定节点后执行 `tools\check_package.ps1`
 4. 检查通过后继续小步 commit 并 push
+
+当前 gallery 状态：
+
+- 已升级为真实 `ggplot2` 示例 gallery
+- 每个 simple palette 包含 bar、scatter、line、UMAP-like 四类图
+- 图像资产保存在 [figures](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\github_repo\ColorPhage\inst\gallery\figures)

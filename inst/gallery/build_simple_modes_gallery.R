@@ -9,8 +9,13 @@ if (!file.exists(file.path(repo_root, "DESCRIPTION"))) {
   repo_root <- normalizePath(getwd(), winslash = "/", mustWork = TRUE)
 }
 
+if (!requireNamespace("ggplot2", quietly = TRUE)) {
+  stop("Package `ggplot2` is required to build the ColorPhage gallery.", call. = FALSE)
+}
+
 source(file.path(repo_root, "R", "data-palettes.R"), local = TRUE)
 source(file.path(repo_root, "R", "phage-palette.R"), local = TRUE)
+source(file.path(repo_root, "R", "ggplot-scales.R"), local = TRUE)
 
 escape_html <- function(x) {
   x <- gsub("&", "&amp;", x, fixed = TRUE)
@@ -28,10 +33,129 @@ palette_ids <- c(
   "vivid_drama"
 )
 
-bar_heights <- c(58, 76, 66, 88, 72, 96, 64, 82)
-line_y <- c(88, 74, 80, 58, 64, 42, 54, 36)
-scatter_x <- c(54, 86, 118, 150, 182, 214, 246, 278)
-scatter_y <- c(88, 56, 116, 74, 132, 44, 104, 66)
+gallery_dir <- file.path(repo_root, "inst", "gallery")
+figure_dir <- file.path(gallery_dir, "figures")
+if (!dir.exists(figure_dir)) {
+  dir.create(figure_dir, recursive = TRUE)
+}
+
+old_figures <- list.files(figure_dir, pattern = "\\.svg$", full.names = TRUE)
+if (length(old_figures)) {
+  unlink(old_figures)
+}
+
+theme_gallery <- function(base_size = 11) {
+  ggplot2::theme_minimal(base_size = base_size) +
+    ggplot2::theme(
+      text = ggplot2::element_text(family = "sans", colour = "#27313c"),
+      plot.background = ggplot2::element_rect(fill = "#fffdf8", colour = NA),
+      panel.background = ggplot2::element_rect(fill = "#fffdf8", colour = NA),
+      panel.grid.major = ggplot2::element_line(colour = "#e7dfd2", linewidth = 0.35),
+      panel.grid.minor = ggplot2::element_blank(),
+      axis.title = ggplot2::element_blank(),
+      axis.text = ggplot2::element_text(colour = "#6c7480", size = 9),
+      legend.position = "none",
+      plot.margin = ggplot2::margin(10, 12, 10, 12)
+    )
+}
+
+save_svg_plot <- function(plot, file, width = 5.8, height = 3.6) {
+  grDevices::svg(filename = file, width = width, height = height, bg = "transparent")
+  on.exit(grDevices::dev.off(), add = TRUE)
+  print(plot)
+}
+
+bar_plot <- function(palette_id) {
+  values <- c(7.8, 10.2, 8.9, 11.5, 9.6, 12.4, 8.4, 10.9)
+  df <- data.frame(
+    group = factor(paste0("G", seq_along(values)), levels = paste0("G", seq_along(values))),
+    value = values
+  )
+
+  ggplot2::ggplot(df, ggplot2::aes(group, value, fill = group)) +
+    ggplot2::geom_col(width = 0.72, alpha = 0.96) +
+    scale_fill_phage(palette = palette_id) +
+    ggplot2::scale_y_continuous(expand = ggplot2::expansion(mult = c(0, 0.12))) +
+    ggplot2::labs(title = "Grouped comparison") +
+    theme_gallery()
+}
+
+scatter_plot <- function(palette_id) {
+  set.seed(3401)
+  group <- factor(rep(paste0("C", 1:8), each = 14), levels = paste0("C", 1:8))
+  centers <- data.frame(
+    x = c(-1.8, -1.1, -0.4, 0.3, 0.9, 1.5, 2.0, 2.5),
+    y = c(0.2, 1.2, -0.8, 0.9, -0.2, 1.4, -0.7, 0.5)
+  )
+  df <- data.frame(
+    group = group,
+    x = rep(centers$x, each = 14) + stats::rnorm(length(group), 0, 0.18),
+    y = rep(centers$y, each = 14) + stats::rnorm(length(group), 0, 0.22)
+  )
+
+  ggplot2::ggplot(df, ggplot2::aes(x, y, colour = group)) +
+    ggplot2::geom_point(size = 2.4, alpha = 0.86) +
+    scale_color_phage(palette = palette_id) +
+    ggplot2::labs(title = "Clustered scatter") +
+    theme_gallery()
+}
+
+line_plot <- function(palette_id) {
+  time <- rep(seq_len(7), times = 8)
+  group <- factor(rep(paste0("L", 1:8), each = 7), levels = paste0("L", 1:8))
+  baseline <- rep(seq(3.8, 6.2, length.out = 8), each = 7)
+  trend <- rep(c(0.15, -0.04, 0.1, 0.2, -0.08, 0.16, 0.05, 0.12), each = 7) * time
+  wave <- rep(c(0.4, -0.2, 0.1, -0.35, 0.25, -0.15, 0.32), times = 8)
+  df <- data.frame(group = group, time = time, value = baseline + trend + wave)
+
+  ggplot2::ggplot(df, ggplot2::aes(time, value, colour = group, group = group)) +
+    ggplot2::geom_line(linewidth = 1.05, alpha = 0.9) +
+    ggplot2::geom_point(size = 1.8, alpha = 0.9) +
+    scale_color_phage(palette = palette_id) +
+    ggplot2::labs(title = "Longitudinal trend") +
+    theme_gallery()
+}
+
+umap_plot <- function(palette_id) {
+  set.seed(909)
+  group <- factor(rep(paste0("T", 1:8), each = 70), levels = paste0("T", 1:8))
+  angle <- seq(0, 2 * pi, length.out = 9)[-9]
+  radius <- c(2.7, 2.2, 2.9, 2.3, 2.8, 2.1, 2.6, 2.4)
+  centers <- data.frame(x = cos(angle) * radius, y = sin(angle) * radius * 0.82)
+  df <- data.frame(
+    group = group,
+    x = rep(centers$x, each = 70) + stats::rnorm(length(group), 0, 0.38),
+    y = rep(centers$y, each = 70) + stats::rnorm(length(group), 0, 0.32)
+  )
+
+  ggplot2::ggplot(df, ggplot2::aes(x, y, colour = group)) +
+    ggplot2::geom_point(size = 1.15, alpha = 0.78) +
+    scale_color_phage(palette = palette_id) +
+    ggplot2::coord_equal() +
+    ggplot2::labs(title = "UMAP-like embedding") +
+    theme_gallery(base_size = 10) +
+    ggplot2::theme(
+      axis.text = ggplot2::element_blank(),
+      panel.grid = ggplot2::element_blank()
+    )
+}
+
+make_plot_files <- function(palette_id) {
+  plots <- list(
+    bar = bar_plot(palette_id),
+    scatter = scatter_plot(palette_id),
+    line = line_plot(palette_id),
+    umap = umap_plot(palette_id)
+  )
+
+  files <- vapply(names(plots), function(kind) {
+    out <- file.path(figure_dir, sprintf("%s_%s.svg", palette_id, kind))
+    save_svg_plot(plots[[kind]], out)
+    file.path("figures", basename(out))
+  }, character(1))
+
+  files
+}
 
 swatch_cards <- function(colors) {
   paste(
@@ -44,79 +168,27 @@ swatch_cards <- function(colors) {
   )
 }
 
-bar_svg <- function(colors) {
-  bars <- paste(
-    sprintf(
-      '<rect x="%s" y="%s" width="28" height="%s" rx="7" fill="%s" />',
-      seq(28, by = 42, length.out = length(colors)),
-      130 - bar_heights,
-      bar_heights,
-      colors
-    ),
-    collapse = "\n"
-  )
+plot_card <- function(title, src) {
   sprintf(
-    '<svg viewBox="0 0 380 150" role="img" aria-label="bar chart preview">
-      <line x1="18" y1="132" x2="360" y2="132" stroke="#d8d0c4" stroke-width="1"/>
-      %s
-    </svg>',
-    bars
-  )
-}
-
-scatter_svg <- function(colors) {
-  circles <- paste(
-    sprintf(
-      '<circle cx="%s" cy="%s" r="9" fill="%s" opacity="0.92" />',
-      scatter_x,
-      scatter_y,
-      colors
-    ),
-    collapse = "\n"
-  )
-  sprintf(
-    '<svg viewBox="0 0 340 160" role="img" aria-label="scatter plot preview">
-      <line x1="26" y1="134" x2="318" y2="134" stroke="#d8d0c4" stroke-width="1"/>
-      <line x1="26" y1="22" x2="26" y2="134" stroke="#d8d0c4" stroke-width="1"/>
-      %s
-    </svg>',
-    circles
-  )
-}
-
-line_svg <- function(colors) {
-  lines <- paste(
-    vapply(seq_along(colors), function(i) {
-      offset <- (i - 1) * 2.4
-      points <- paste(
-        sprintf(
-          "%s,%s",
-          seq(28, by = 42, length.out = 8),
-          pmax(18, pmin(128, line_y + offset - i * 1.3))
-        ),
-        collapse = " "
-      )
-      sprintf(
-        '<polyline points="%s" fill="none" stroke="%s" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.84"/>',
-        points,
-        colors[[i]]
-      )
-    }, character(1)),
-    collapse = "\n"
-  )
-  sprintf(
-    '<svg viewBox="0 0 380 150" role="img" aria-label="line chart preview">
-      <line x1="18" y1="132" x2="360" y2="132" stroke="#d8d0c4" stroke-width="1"/>
-      <line x1="18" y1="20" x2="18" y2="132" stroke="#d8d0c4" stroke-width="1"/>
-      %s
-    </svg>',
-    lines
+    '<div class="preview-card"><h3>%s</h3><img src="%s" alt="%s"></div>',
+    escape_html(title),
+    escape_html(src),
+    escape_html(title)
   )
 }
 
 palette_section <- function(id) {
   meta <- .phage_palettes[[id]]
   colors <- meta$colors
+  figure_files <- make_plot_files(id)
+  plot_cards <- paste(
+    plot_card("Fill / bar", figure_files[["bar"]]),
+    plot_card("Colour / scatter", figure_files[["scatter"]]),
+    plot_card("Colour / line", figure_files[["line"]]),
+    plot_card("UMAP-like", figure_files[["umap"]]),
+    sep = "\n"
+  )
+
   sprintf(
     '<section class="palette-section">
       <div class="palette-head">
@@ -127,11 +199,7 @@ palette_section <- function(id) {
         </div>
       </div>
       <div class="swatches">%s</div>
-      <div class="preview-grid">
-        <div class="preview-card"><h3>Fill / bar</h3>%s</div>
-        <div class="preview-card"><h3>Colour / scatter</h3>%s</div>
-        <div class="preview-card"><h3>Colour / line</h3>%s</div>
-      </div>
+      <div class="preview-grid">%s</div>
     </section>',
     escape_html(meta$mode),
     escape_html(meta$variant),
@@ -139,9 +207,7 @@ palette_section <- function(id) {
     escape_html(meta$id),
     escape_html(meta$role),
     swatch_cards(colors),
-    bar_svg(colors),
-    scatter_svg(colors),
-    line_svg(colors)
+    plot_cards
   )
 }
 
@@ -176,7 +242,7 @@ html <- sprintf(
         var(--bg);
       line-height: 1.55;
     }
-    .wrap { width: min(1180px, calc(100%% - 48px)); margin: 36px auto 72px; }
+    .wrap { width: min(1280px, calc(100%% - 48px)); margin: 36px auto 72px; }
     .hero, .palette-section {
       background: rgba(255,253,248,.94);
       border: 1px solid var(--line);
@@ -186,7 +252,7 @@ html <- sprintf(
     .hero { padding: 34px 36px; margin-bottom: 22px; }
     h1, h2, h3, p { margin: 0; }
     h1 { font-size: clamp(34px, 5vw, 58px); letter-spacing: .01em; margin-bottom: 12px; }
-    .hero p { max-width: 780px; color: var(--muted); font-size: 17px; }
+    .hero p { max-width: 860px; color: var(--muted); font-size: 17px; }
     .mode-strip { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
     .pill {
       border: 1px solid var(--line);
@@ -233,9 +299,16 @@ html <- sprintf(
       background: linear-gradient(180deg, #fff, #f9f5ef);
       border-radius: 22px;
       padding: 16px 16px 12px;
+      overflow: hidden;
     }
     .preview-card h3 { font-size: 15px; color: var(--muted); margin-bottom: 10px; }
-    svg { width: 100%%; height: auto; display: block; }
+    .preview-card img {
+      width: 100%%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+      background: #fffdf8;
+    }
     .footer { color: var(--muted); text-align: center; padding: 26px 0 0; font-size: 14px; }
   </style>
 </head>
@@ -243,11 +316,12 @@ html <- sprintf(
   <main class="wrap">
     <section class="hero">
       <h1>ColorPhage Simple Modes Gallery</h1>
-      <p>这是 ColorPhage 简单模式 MVP 的最小 gallery，用来同时检查色块、填充图、散点图和折线图中的真实观感。当前展示 3 组 soft 与 3 组 vivid 的最终 n = 8 版本。</p>
+      <p>这是 ColorPhage 简单模式 MVP 的真实 ggplot2 gallery，用来同时检查色块、填充图、散点图、折线图和 UMAP-like 场景中的实际观感。当前展示 3 组 soft 与 3 组 vivid 的最终 n = 8 版本。</p>
       <div class="mode-strip">
         <span class="pill">soft default: soft_harbor</span>
         <span class="pill">vivid default: vivid_core</span>
         <span class="pill">current limit: n &lt;= 8</span>
+        <span class="pill">plots rendered by ggplot2</span>
       </div>
     </section>
     %s
@@ -258,6 +332,6 @@ html <- sprintf(
   sections
 )
 
-out_file <- file.path(repo_root, "inst", "gallery", "simple_modes_gallery.html")
+out_file <- file.path(gallery_dir, "simple_modes_gallery.html")
 writeLines(html, out_file, useBytes = TRUE)
 message("Wrote: ", normalizePath(out_file, winslash = "/", mustWork = TRUE))

@@ -704,6 +704,36 @@
 - 已通过远程连接测试：
   - `git ls-remote --heads origin`
 
+#### 3.49 升级真实 ggplot2 gallery
+
+- 用户要求：
+  - 先更新记录文件
+  - 然后继续执行建议的下一步
+- 已将 `simple_modes_gallery.html` 从手写简化 SVG 预览升级为真实 `ggplot2` 示例 gallery。
+- 已更新生成脚本：
+  - [build_simple_modes_gallery.R](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\github_repo\ColorPhage\inst\gallery\build_simple_modes_gallery.R)
+- 当前每个 palette 生成 4 类真实 `ggplot2` 图：
+  - bar：填充型分组比较
+  - scatter：多组散点
+  - line：多组趋势线
+  - UMAP-like：单细胞/降维图风格散点
+- 已新增 gallery 图像资产目录：
+  - [figures](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\github_repo\ColorPhage\inst\gallery\figures)
+- 当前共生成：
+  - 6 个 palette
+  - 每个 palette 4 张 SVG
+  - 合计 24 张真实 `ggplot2` SVG 图
+- 生成命令：
+  - `powershell -ExecutionPolicy Bypass -File "tools\build_gallery.ps1"`
+- 生成结果：
+  - 成功
+- 同步修复：
+  - 移除了 `R/ggplot-scales.R` 中已被 ggplot2 弃用的 `scale_name` 参数
+  - 避免新版 ggplot2 下出现 deprecation warning
+- 包检查结果：
+  - `tools\check_package.ps1` 通过
+  - `R CMD check --no-manual`：`Status: OK`
+
 ## 4. 当前已存在核心文档
 
 - [requirements_blueprint_draft.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\planning\requirements_blueprint_draft.md)

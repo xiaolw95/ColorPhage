@@ -20,7 +20,6 @@ scale_color_phage <- function(...,
   .check_ggplot2()
   ggplot2::discrete_scale(
     aesthetics = "colour",
-    scale_name = "phage_colour",
     palette = .ggplot_palette(mode = mode, palette = palette, variant = variant),
     ...
   )
@@ -46,7 +45,6 @@ scale_fill_phage <- function(...,
   .check_ggplot2()
   ggplot2::discrete_scale(
     aesthetics = "fill",
-    scale_name = "phage_fill",
     palette = .ggplot_palette(mode = mode, palette = palette, variant = variant),
     ...
   )
@@ -67,4 +65,3 @@ scale_fill_phage <- function(...,
     stop("Package `ggplot2` is required for ColorPhage scale helpers.", call. = FALSE)
   }
 }
-
