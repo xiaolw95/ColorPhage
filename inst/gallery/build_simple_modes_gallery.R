@@ -16,6 +16,7 @@ if (!requireNamespace("ggplot2", quietly = TRUE)) {
 source(file.path(repo_root, "R", "data-palettes.R"), local = TRUE)
 source(file.path(repo_root, "R", "phage-palette.R"), local = TRUE)
 source(file.path(repo_root, "R", "ggplot-scales.R"), local = TRUE)
+source(file.path(repo_root, "R", "theme-phage.R"), local = TRUE)
 
 escape_html <- function(x) {
   x <- gsub("&", "&amp;", x, fixed = TRUE)
@@ -63,17 +64,15 @@ if (length(old_figures)) {
 }
 
 theme_gallery <- function(base_size = 11) {
-  ggplot2::theme_minimal(base_size = base_size) +
+  theme_phage(
+    base_size = base_size,
+    grid = "y",
+    legend_position = "none"
+  ) +
     ggplot2::theme(
-      text = ggplot2::element_text(family = "sans", colour = "#27313c"),
-      plot.background = ggplot2::element_rect(fill = "#fffdf8", colour = NA),
-      panel.background = ggplot2::element_rect(fill = "#fffdf8", colour = NA),
-      panel.grid.major = ggplot2::element_line(colour = "#e7dfd2", linewidth = 0.35),
-      panel.grid.minor = ggplot2::element_blank(),
+      plot.background = ggplot2::element_rect(fill = "#FFFDF8", colour = NA),
       axis.title = ggplot2::element_blank(),
-      axis.text = ggplot2::element_text(colour = "#6c7480", size = 9),
-      legend.position = "none",
-      plot.margin = ggplot2::margin(10, 12, 10, 12)
+      axis.text = ggplot2::element_text(size = 9)
     )
 }
 

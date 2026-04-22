@@ -80,3 +80,11 @@ test_that("available palette metadata includes current branches", {
     "cinema_noir", "mist_cloud"
   ) %in% ids))
 })
+
+test_that("theme_phage returns a ggplot2 theme", {
+  skip_if_not_installed("ggplot2")
+
+  theme_obj <- theme_phage()
+
+  expect_s3_class(theme_obj, "theme")
+})
