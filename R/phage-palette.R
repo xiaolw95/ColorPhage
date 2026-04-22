@@ -2,18 +2,20 @@
 #'
 #' `phage_palette()` returns a colour vector from the current ColorPhage
 #' palette library. The current development version supports the confirmed
-#' `soft`, `vivid`, `forest`, and `mineral` palette branches up to 8 colours.
+#' `soft`, `vivid`, `forest`, `mineral`, and `ocean` palette branches up to 8 colours.
 #'
 #' @param n Number of colours to return. Must be between 1 and 8 in the
 #'   current MVP.
-#' @param mode Palette mode. One of `"soft"`, `"vivid"`, `"forest"`, or
-#'   `"mineral"`. Ignored when `palette` is supplied.
+#' @param mode Palette mode. One of `"soft"`, `"vivid"`, `"forest"`,
+#'   `"mineral"`, or `"ocean"`. Ignored when `palette` is supplied.
 #' @param palette Internal palette id, such as `"soft_harbor"` or
-#'   `"vivid_core"` or `"forest_canopy"` or `"mineral_slate"`. When
-#'   supplied, it takes priority over `mode` and `variant`.
+#'   `"vivid_core"` or `"forest_canopy"` or `"mineral_slate"` or
+#'   `"ocean_current"`. When supplied, it takes priority over `mode` and
+#'   `variant`.
 #' @param variant Optional variant within a mode, such as `"breeze"`,
 #'   `"harbor"`, `"mist"`, `"core"`, `"fresh"`, `"drama"`, `"canopy"`,
-#'   `"moss"`, `"ember"`, `"slate"`, `"quartz"`, or `"oxide"`.
+#'   `"moss"`, `"ember"`, `"slate"`, `"quartz"`, `"oxide"`, `"current"`,
+#'   `"glass"`, or `"depth"`.
 #'
 #' @return A character vector of hexadecimal colours.
 #' @export
@@ -23,8 +25,9 @@
 #' phage_palette(8, mode = "vivid", variant = "drama")
 #' phage_palette(8, mode = "forest", variant = "canopy")
 #' phage_palette(8, mode = "mineral", variant = "slate")
+#' phage_palette(8, mode = "ocean", variant = "current")
 phage_palette <- function(n,
-                          mode = c("soft", "vivid", "forest", "mineral"),
+                          mode = c("soft", "vivid", "forest", "mineral", "ocean"),
                           palette = NULL,
                           variant = NULL) {
   n <- .validate_n(n)

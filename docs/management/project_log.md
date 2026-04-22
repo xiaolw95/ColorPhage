@@ -888,6 +888,41 @@
 - 图像资产目录：
   - [ocean_family_preview_figures](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\ocean_family_preview_figures)
 
+#### 3.56 将 ocean family 写入 R 包并记录网络检查状态
+
+- 用户已审阅 `ocean` 三个候选分支，并确认：
+  - 当前版本没有问题
+  - 继续后续 family
+- 已记录 GitHub 网络与推送情况：
+  - `mineral` 接入提交时第一次 `git push` 出现 `Recv failure: Connection was reset`
+  - 随后提交 `ocean` 候选设计时再次执行 `git push`
+  - 该次 push 成功，将 `mineral` 接入与 `ocean` 候选设计一并推送到 GitHub
+  - push 后本地状态显示 `main...origin/main` 同步
+  - 但随后 `git ls-remote --heads origin main` 因无法连接 `github.com:443` 失败
+  - 结论：push 已成功，但在线二次查询受当前网络连接限制，需之后网络稳定时再复查
+- 已将以下 palette 写入 R 包核心数据：
+  - `ocean_current`
+  - `ocean_glass`
+  - `ocean_depth`
+- 已新增默认映射：
+  - `mode = "ocean"` -> `ocean_current`
+- 当前 `phage_palette()` 支持：
+  - `mode = "soft"`
+  - `mode = "vivid"`
+  - `mode = "forest"`
+  - `mode = "mineral"`
+  - `mode = "ocean"`
+- 当前 R 包 palette 总数：
+  - 15 组
+- 已重新生成主 gallery：
+  - 3 组 `soft`
+  - 3 组 `vivid`
+  - 3 组 `forest`
+  - 3 组 `mineral`
+  - 3 组 `ocean`
+  - 每组 4 类真实 `ggplot2` 图
+  - 合计 60 张 SVG 图像
+
 ## 4. 当前已存在核心文档
 
 - [requirements_blueprint_draft.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\planning\requirements_blueprint_draft.md)

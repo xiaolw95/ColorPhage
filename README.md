@@ -1,13 +1,13 @@
 # ColorPhage
 
-ColorPhage is an early-stage R package for high-aesthetic scientific figure palettes. The current MVP includes simple `soft` and `vivid` modes plus the advanced `forest` and `mineral` families for publication-oriented discrete colour palettes.
+ColorPhage is an early-stage R package for high-aesthetic scientific figure palettes. The current MVP includes simple `soft` and `vivid` modes plus the advanced `forest`, `mineral`, and `ocean` families for publication-oriented discrete colour palettes.
 
 ## Current Scope
 
 - `phage_palette()` returns colour vectors.
 - `scale_color_phage()` and `scale_fill_phage()` provide ggplot2 discrete scales.
-- The MVP includes 12 confirmed `n = 8` palettes.
-- The first two advanced families, `forest` and `mineral`, are implemented.
+- The MVP includes 15 confirmed `n = 8` palettes.
+- The first three advanced families, `forest`, `mineral`, and `ocean`, are implemented.
 - Continuous palettes, diverging palettes, and generation features are planned but not implemented yet.
 
 ## Installation
@@ -29,6 +29,7 @@ phage_palette(5, mode = "soft")
 phage_palette(8, mode = "vivid", variant = "drama")
 phage_palette(8, mode = "forest", variant = "canopy")
 phage_palette(8, mode = "mineral", variant = "slate")
+phage_palette(8, mode = "ocean", variant = "current")
 phage_palette(8, palette = "soft_harbor")
 ```
 
@@ -53,6 +54,10 @@ ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
 ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
   geom_point(size = 3) +
   scale_color_phage(mode = "mineral")
+
+ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
+  geom_point(size = 3) +
+  scale_color_phage(mode = "ocean")
 ```
 
 ## Available Palettes
@@ -75,6 +80,9 @@ Current palette IDs:
 - `mineral_slate`
 - `mineral_quartz`
 - `mineral_oxide`
+- `ocean_current`
+- `ocean_glass`
+- `ocean_depth`
 
 Default mappings:
 
@@ -82,6 +90,7 @@ Default mappings:
 - `mode = "vivid"` uses `vivid_core`
 - `mode = "forest"` uses `forest_canopy`
 - `mode = "mineral"` uses `mineral_slate`
+- `mode = "ocean"` uses `ocean_current`
 
 ## Development Notes
 

@@ -130,6 +130,39 @@
       "#2B3F4A", "#4E6B73", "#789097", "#B5C1BE",
       "#D4C6A8", "#B9825D", "#A9574E", "#5E4A5D"
     )
+  ),
+  ocean_current = list(
+    id = "ocean_current",
+    mode = "ocean",
+    variant = "current",
+    display_name = "Ocean Current",
+    role = "Default ocean branch with flowing blue-green, sea-glass highlights, cool white, muted sand, and coral anchors.",
+    colors = c(
+      "#1F4E5F", "#337A84", "#62A5A7", "#A7CED1",
+      "#D8E7E4", "#7FA6C2", "#C99A6B", "#B6635C"
+    )
+  ),
+  ocean_glass = list(
+    id = "ocean_glass",
+    mode = "ocean",
+    variant = "glass",
+    display_name = "Ocean Glass",
+    role = "Softer ocean branch with sea-glass blue-greens, pale surf, warm sand, and muted rose-brown.",
+    colors = c(
+      "#3E6674", "#6D94A0", "#9DB9C0", "#D4E1DE",
+      "#B7CDC7", "#86A9B8", "#D6B48A", "#A87573"
+    )
+  ),
+  ocean_depth = list(
+    id = "ocean_depth",
+    mode = "ocean",
+    variant = "depth",
+    display_name = "Ocean Depth",
+    role = "Deeper ocean branch with dark teal, layered sea blue, cool surf, muted violet, and warm coral emphasis.",
+    colors = c(
+      "#123B4A", "#245E70", "#3F8292", "#7EB1B8",
+      "#BFD8D6", "#5F7895", "#9B6E7B", "#D08965"
+    )
   )
 )
 
@@ -137,5 +170,6 @@
   soft = "soft_harbor",
   vivid = "vivid_core",
   forest = "forest_canopy",
-  mineral = "mineral_slate"
+  mineral = "mineral_slate",
+  ocean = "ocean_current"
 )
