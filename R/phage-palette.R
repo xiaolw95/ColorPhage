@@ -2,21 +2,24 @@
 #'
 #' `phage_palette()` returns a colour vector from the current ColorPhage
 #' palette library. The current development version supports the confirmed
-#' `soft`, `vivid`, `forest`, `mineral`, `ocean`, and `retro` palette branches
-#' up to 8 colours.
+#' `soft`, `vivid`, `forest`, `mineral`, `ocean`, `retro`, `cinema`, and
+#' `mist` palette branches up to 8 colours.
 #'
 #' @param n Number of colours to return. Must be between 1 and 8 in the
 #'   current MVP.
 #' @param mode Palette mode. One of `"soft"`, `"vivid"`, `"forest"`,
-#'   `"mineral"`, `"ocean"`, or `"retro"`. Ignored when `palette` is supplied.
+#'   `"mineral"`, `"ocean"`, `"retro"`, `"cinema"`, or `"mist"`. Ignored
+#'   when `palette` is supplied.
 #' @param palette Internal palette id, such as `"soft_harbor"` or
 #'   `"vivid_core"` or `"forest_canopy"` or `"mineral_slate"` or
-#'   `"ocean_current"` or `"retro_film"`. When supplied, it takes priority
-#'   over `mode` and `variant`.
+#'   `"ocean_current"` or `"retro_film"` or `"cinema_noir"` or
+#'   `"mist_cloud"`. When supplied, it takes priority over `mode` and
+#'   `variant`.
 #' @param variant Optional variant within a mode, such as `"breeze"`,
 #'   `"harbor"`, `"mist"`, `"core"`, `"fresh"`, `"drama"`, `"canopy"`,
 #'   `"moss"`, `"ember"`, `"slate"`, `"quartz"`, `"oxide"`, `"current"`,
-#'   `"glass"`, `"depth"`, `"film"`, `"paper"`, or `"signal"`.
+#'   `"glass"`, `"depth"`, `"film"`, `"paper"`, `"signal"`, `"noir"`,
+#'   `"marquee"`, `"velvet"`, `"cloud"`, `"lilac"`, or `"shell"`.
 #'
 #' @return A character vector of hexadecimal colours.
 #' @export
@@ -28,8 +31,10 @@
 #' phage_palette(8, mode = "mineral", variant = "slate")
 #' phage_palette(8, mode = "ocean", variant = "current")
 #' phage_palette(8, mode = "retro", variant = "film")
+#' phage_palette(8, mode = "cinema", variant = "noir")
+#' phage_palette(8, mode = "mist", variant = "cloud")
 phage_palette <- function(n,
-                          mode = c("soft", "vivid", "forest", "mineral", "ocean", "retro"),
+                          mode = c("soft", "vivid", "forest", "mineral", "ocean", "retro", "cinema", "mist"),
                           palette = NULL,
                           variant = NULL) {
   n <- .validate_n(n)

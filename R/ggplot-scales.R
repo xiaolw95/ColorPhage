@@ -14,7 +14,7 @@
 #'     scale_color_phage(mode = "vivid")
 #' }
 scale_color_phage <- function(...,
-                              mode = c("soft", "vivid", "forest", "mineral", "ocean", "retro"),
+                              mode = c("soft", "vivid", "forest", "mineral", "ocean", "retro", "cinema", "mist"),
                               palette = NULL,
                               variant = NULL) {
   .check_ggplot2()
@@ -39,7 +39,7 @@ scale_color_phage <- function(...,
 #'     scale_fill_phage(mode = "soft")
 #' }
 scale_fill_phage <- function(...,
-                             mode = c("soft", "vivid", "forest", "mineral", "ocean", "retro"),
+                             mode = c("soft", "vivid", "forest", "mineral", "ocean", "retro", "cinema", "mist"),
                              palette = NULL,
                              variant = NULL) {
   .check_ggplot2()

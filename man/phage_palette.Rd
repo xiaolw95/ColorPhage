@@ -4,16 +4,16 @@
 \usage{
 phage_palette(
   n,
-  mode = c("soft", "vivid", "forest", "mineral", "ocean", "retro"),
+  mode = c("soft", "vivid", "forest", "mineral", "ocean", "retro", "cinema", "mist"),
   palette = NULL,
   variant = NULL
 )
 }
 \arguments{
 \item{n}{Number of colours to return. Must be between 1 and 8 in the current MVP.}
-\item{mode}{Palette mode. One of \code{"soft"}, \code{"vivid"}, \code{"forest"}, \code{"mineral"}, \code{"ocean"}, or \code{"retro"}. Ignored when \code{palette} is supplied.}
-\item{palette}{Internal palette id, such as \code{"soft_harbor"}, \code{"vivid_core"}, \code{"forest_canopy"}, \code{"mineral_slate"}, \code{"ocean_current"}, or \code{"retro_film"}.}
-\item{variant}{Optional variant within a mode, such as \code{"breeze"}, \code{"harbor"}, \code{"mist"}, \code{"core"}, \code{"fresh"}, \code{"drama"}, \code{"canopy"}, \code{"moss"}, \code{"ember"}, \code{"slate"}, \code{"quartz"}, \code{"oxide"}, \code{"current"}, \code{"glass"}, \code{"depth"}, \code{"film"}, \code{"paper"}, or \code{"signal"}.}
+\item{mode}{Palette mode. One of \code{"soft"}, \code{"vivid"}, \code{"forest"}, \code{"mineral"}, \code{"ocean"}, \code{"retro"}, \code{"cinema"}, or \code{"mist"}. Ignored when \code{palette} is supplied.}
+\item{palette}{Internal palette id, such as \code{"soft_harbor"}, \code{"vivid_core"}, \code{"forest_canopy"}, \code{"mineral_slate"}, \code{"ocean_current"}, \code{"retro_film"}, \code{"cinema_noir"}, or \code{"mist_cloud"}.}
+\item{variant}{Optional variant within a mode, such as \code{"breeze"}, \code{"harbor"}, \code{"mist"}, \code{"core"}, \code{"fresh"}, \code{"drama"}, \code{"canopy"}, \code{"moss"}, \code{"ember"}, \code{"slate"}, \code{"quartz"}, \code{"oxide"}, \code{"current"}, \code{"glass"}, \code{"depth"}, \code{"film"}, \code{"paper"}, \code{"signal"}, \code{"noir"}, \code{"marquee"}, \code{"velvet"}, \code{"cloud"}, \code{"lilac"}, or \code{"shell"}.}
 }
 \value{
 A character vector of hexadecimal colours.
@@ -28,4 +28,6 @@ phage_palette(8, mode = "forest", variant = "canopy")
 phage_palette(8, mode = "mineral", variant = "slate")
 phage_palette(8, mode = "ocean", variant = "current")
 phage_palette(8, mode = "retro", variant = "film")
+phage_palette(8, mode = "cinema", variant = "noir")
+phage_palette(8, mode = "mist", variant = "cloud")
 }

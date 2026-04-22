@@ -4,15 +4,15 @@
 \usage{
 scale_fill_phage(
   ...,
-  mode = c("soft", "vivid", "forest", "mineral", "ocean", "retro"),
+  mode = c("soft", "vivid", "forest", "mineral", "ocean", "retro", "cinema", "mist"),
   palette = NULL,
   variant = NULL
 )
 }
 \arguments{
 \item{...}{Additional arguments passed to ggplot2 discrete scale constructors.}
-\item{mode}{Palette mode. One of \code{"soft"}, \code{"vivid"}, \code{"forest"}, \code{"mineral"}, \code{"ocean"}, or \code{"retro"}. Ignored when \code{palette} is supplied.}
-\item{palette}{Internal palette id, such as \code{"soft_harbor"}, \code{"vivid_core"}, \code{"forest_canopy"}, \code{"mineral_slate"}, \code{"ocean_current"}, or \code{"retro_film"}.}
+\item{mode}{Palette mode. One of \code{"soft"}, \code{"vivid"}, \code{"forest"}, \code{"mineral"}, \code{"ocean"}, \code{"retro"}, \code{"cinema"}, or \code{"mist"}. Ignored when \code{palette} is supplied.}
+\item{palette}{Internal palette id, such as \code{"soft_harbor"}, \code{"vivid_core"}, \code{"forest_canopy"}, \code{"mineral_slate"}, \code{"ocean_current"}, \code{"retro_film"}, \code{"cinema_noir"}, or \code{"mist_cloud"}.}
 \item{variant}{Optional variant within a mode.}
 }
 \value{

@@ -196,6 +196,72 @@
       "#3F4A46", "#697464", "#9B956C", "#D3AE62",
       "#E4CDA6", "#C66F54", "#93485A", "#526A82"
     )
+  ),
+  cinema_noir = list(
+    id = "cinema_noir",
+    mode = "cinema",
+    variant = "noir",
+    display_name = "Cinema Noir",
+    role = "Default cinema branch with dark blue-grey structure, warm copper, red-brown, and muted mauve anchors for focused result figures.",
+    colors = c(
+      "#1F2A36", "#3C4E63", "#6A7D91", "#A8B6C2",
+      "#D9D5CC", "#C59A63", "#B45A53", "#7A5D78"
+    )
+  ),
+  cinema_marquee = list(
+    id = "cinema_marquee",
+    mode = "cinema",
+    variant = "marquee",
+    display_name = "Cinema Marquee",
+    role = "Brighter cinema branch with stage-light teal, pale foreground neutrals, amber, coral, and mauve emphasis.",
+    colors = c(
+      "#24313F", "#46606F", "#72959A", "#C1D2CF",
+      "#E6DDD1", "#D8B06B", "#C97B5D", "#9A667C"
+    )
+  ),
+  cinema_velvet = list(
+    id = "cinema_velvet",
+    mode = "cinema",
+    variant = "velvet",
+    display_name = "Cinema Velvet",
+    role = "More theatrical cinema branch with plum-grey structure, warm bronze, brick, and steel-blue balance.",
+    colors = c(
+      "#2A2632", "#51455E", "#7B6B82", "#A9B0B9",
+      "#D8D0C8", "#B89B6F", "#A95C58", "#5C7288"
+    )
+  ),
+  mist_cloud = list(
+    id = "mist_cloud",
+    mode = "mist",
+    variant = "cloud",
+    display_name = "Mist Cloud",
+    role = "Default mist branch with quiet cloud blue, pale stone neutrals, and soft mauve balance for long-reading figures.",
+    colors = c(
+      "#8CA0B3", "#B3C0C9", "#D8E0DE", "#E8E5DE",
+      "#E0D1C9", "#C9B7C4", "#A8B2C7", "#CFC6D8"
+    )
+  ),
+  mist_lilac = list(
+    id = "mist_lilac",
+    mode = "mist",
+    variant = "lilac",
+    display_name = "Mist Lilac",
+    role = "Lilac-leaning mist branch with pale violet, fog blue, and quiet neutrals for gentle narrative figures.",
+    colors = c(
+      "#9EA6C4", "#C0C6D8", "#DDE2E8", "#E9E6E1",
+      "#D9CFD4", "#C7B8C8", "#B6C6D4", "#E0D7E5"
+    )
+  ),
+  mist_shell = list(
+    id = "mist_shell",
+    mode = "mist",
+    variant = "shell",
+    display_name = "Mist Shell",
+    role = "Warmer mist branch with shell white, fog green, pale sand, and cool grey-lilac support.",
+    colors = c(
+      "#95A7A0", "#B9C7C1", "#DDE3DE", "#EAE2D7",
+      "#D8C7BC", "#C6B6AA", "#B8C5D1", "#D9D1DA"
+    )
   )
 )
 
@@ -205,5 +271,7 @@
   forest = "forest_canopy",
   mineral = "mineral_slate",
   ocean = "ocean_current",
-  retro = "retro_film"
+  retro = "retro_film",
+  cinema = "cinema_noir",
+  mist = "mist_cloud"
 )

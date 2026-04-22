@@ -42,7 +42,13 @@ palette_ids <- c(
   "ocean_depth",
   "retro_film",
   "retro_paper",
-  "retro_signal"
+  "retro_signal",
+  "cinema_noir",
+  "cinema_marquee",
+  "cinema_velvet",
+  "mist_cloud",
+  "mist_lilac",
+  "mist_shell"
 )
 
 gallery_dir <- file.path(repo_root, "inst", "gallery")
@@ -231,7 +237,7 @@ html <- sprintf(
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ColorPhage Simple Modes Gallery</title>
+  <title>ColorPhage Palette Gallery</title>
   <style>
     :root {
       --bg: #f4f1ea;
@@ -328,7 +334,7 @@ html <- sprintf(
   <main class="wrap">
     <section class="hero">
       <h1>ColorPhage Palette Gallery</h1>
-      <p>这是 ColorPhage MVP 的真实 ggplot2 gallery，用来同时检查色块、填充图、散点图、折线图和 UMAP-like 场景中的实际观感。当前展示 3 组 soft、3 组 vivid、3 组 forest、3 组 mineral、3 组 ocean 与 3 组 retro 的最终 n = 8 版本。</p>
+      <p>这是 ColorPhage MVP 的真实 ggplot2 gallery，用来同时检查色块、填充图、散点图、折线图和 UMAP-like 场景中的实际观感。当前展示 3 组 soft、3 组 vivid、3 组 forest、3 组 mineral、3 组 ocean、3 组 retro、3 组 cinema 与 3 组 mist 的最终 n = 8 版本。</p>
       <div class="mode-strip">
         <span class="pill">soft default: soft_harbor</span>
         <span class="pill">vivid default: vivid_core</span>
@@ -336,6 +342,8 @@ html <- sprintf(
         <span class="pill">mineral default: mineral_slate</span>
         <span class="pill">ocean default: ocean_current</span>
         <span class="pill">retro default: retro_film</span>
+        <span class="pill">cinema default: cinema_noir</span>
+        <span class="pill">mist default: mist_cloud</span>
         <span class="pill">current limit: n &lt;= 8</span>
         <span class="pill">plots rendered by ggplot2</span>
       </div>

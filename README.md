@@ -1,13 +1,13 @@
 # ColorPhage
 
-ColorPhage is an early-stage R package for high-aesthetic scientific figure palettes. The current MVP includes simple `soft` and `vivid` modes plus the advanced `forest`, `mineral`, `ocean`, and `retro` families for publication-oriented discrete colour palettes.
+ColorPhage is an early-stage R package for high-aesthetic scientific figure palettes. The current MVP includes simple `soft` and `vivid` modes plus the advanced `forest`, `mineral`, `ocean`, `retro`, `cinema`, and `mist` families for publication-oriented discrete colour palettes.
 
 ## Current Scope
 
 - `phage_palette()` returns colour vectors.
 - `scale_color_phage()` and `scale_fill_phage()` provide ggplot2 discrete scales.
-- The MVP includes 18 confirmed `n = 8` palettes.
-- The first four advanced families, `forest`, `mineral`, `ocean`, and `retro`, are implemented.
+- The MVP includes 24 confirmed `n = 8` palettes.
+- The first six advanced families, `forest`, `mineral`, `ocean`, `retro`, `cinema`, and `mist`, are implemented.
 - Continuous palettes, diverging palettes, and generation features are planned but not implemented yet.
 
 ## Installation
@@ -31,6 +31,8 @@ phage_palette(8, mode = "forest", variant = "canopy")
 phage_palette(8, mode = "mineral", variant = "slate")
 phage_palette(8, mode = "ocean", variant = "current")
 phage_palette(8, mode = "retro", variant = "film")
+phage_palette(8, mode = "cinema", variant = "noir")
+phage_palette(8, mode = "mist", variant = "cloud")
 phage_palette(8, palette = "soft_harbor")
 ```
 
@@ -63,6 +65,14 @@ ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
 ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
   geom_point(size = 3) +
   scale_color_phage(mode = "retro")
+
+ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
+  geom_point(size = 3) +
+  scale_color_phage(mode = "cinema")
+
+ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
+  geom_point(size = 3) +
+  scale_color_phage(mode = "mist")
 ```
 
 ## Available Palettes
@@ -91,6 +101,12 @@ Current palette IDs:
 - `retro_film`
 - `retro_paper`
 - `retro_signal`
+- `cinema_noir`
+- `cinema_marquee`
+- `cinema_velvet`
+- `mist_cloud`
+- `mist_lilac`
+- `mist_shell`
 
 Default mappings:
 
@@ -100,6 +116,8 @@ Default mappings:
 - `mode = "mineral"` uses `mineral_slate`
 - `mode = "ocean"` uses `ocean_current`
 - `mode = "retro"` uses `retro_film`
+- `mode = "cinema"` uses `cinema_noir`
+- `mode = "mist"` uses `mist_cloud`
 
 ## Development Notes
 
