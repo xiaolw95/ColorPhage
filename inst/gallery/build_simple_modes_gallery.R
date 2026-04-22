@@ -33,7 +33,10 @@ palette_ids <- c(
   "vivid_drama",
   "forest_canopy",
   "forest_moss",
-  "forest_ember"
+  "forest_ember",
+  "mineral_slate",
+  "mineral_quartz",
+  "mineral_oxide"
 )
 
 gallery_dir <- file.path(repo_root, "inst", "gallery")
@@ -319,11 +322,12 @@ html <- sprintf(
   <main class="wrap">
     <section class="hero">
       <h1>ColorPhage Palette Gallery</h1>
-      <p>这是 ColorPhage MVP 的真实 ggplot2 gallery，用来同时检查色块、填充图、散点图、折线图和 UMAP-like 场景中的实际观感。当前展示 3 组 soft、3 组 vivid 与 3 组 forest 的最终 n = 8 版本。</p>
+      <p>这是 ColorPhage MVP 的真实 ggplot2 gallery，用来同时检查色块、填充图、散点图、折线图和 UMAP-like 场景中的实际观感。当前展示 3 组 soft、3 组 vivid、3 组 forest 与 3 组 mineral 的最终 n = 8 版本。</p>
       <div class="mode-strip">
         <span class="pill">soft default: soft_harbor</span>
         <span class="pill">vivid default: vivid_core</span>
         <span class="pill">forest default: forest_canopy</span>
+        <span class="pill">mineral default: mineral_slate</span>
         <span class="pill">current limit: n &lt;= 8</span>
         <span class="pill">plots rendered by ggplot2</span>
       </div>

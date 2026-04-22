@@ -833,6 +833,36 @@
 - 图像资产目录：
   - [mineral_family_preview_figures](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\design\mineral_family_preview_figures)
 
+#### 3.54 将 mineral family 写入 R 包
+
+- 用户已审阅 `mineral` 三个候选分支，并确认：
+  - 当前版本审核通过
+  - 可以继续下一个 family
+- 已检查当前 Git 状态：
+  - 本地 `main` 与 `origin/main` 同步
+  - 本地日志显示 `forest` 与 `mineral` 设计提交已位于 `origin/main`
+  - 实时 `git ls-remote` 因当前网络无法连接 GitHub，未能在线二次确认
+- 已将以下 palette 写入 R 包核心数据：
+  - `mineral_slate`
+  - `mineral_quartz`
+  - `mineral_oxide`
+- 已新增默认映射：
+  - `mode = "mineral"` -> `mineral_slate`
+- 当前 `phage_palette()` 支持：
+  - `mode = "soft"`
+  - `mode = "vivid"`
+  - `mode = "forest"`
+  - `mode = "mineral"`
+- 当前 R 包 palette 总数：
+  - 12 组
+- 已重新生成主 gallery：
+  - 3 组 `soft`
+  - 3 组 `vivid`
+  - 3 组 `forest`
+  - 3 组 `mineral`
+  - 每组 4 类真实 `ggplot2` 图
+  - 合计 48 张 SVG 图像
+
 ## 4. 当前已存在核心文档
 
 - [requirements_blueprint_draft.md](C:\Users\Administrator\OneDrive\Documentos\Myjob_codex\ColorPhage\docs\planning\requirements_blueprint_draft.md)

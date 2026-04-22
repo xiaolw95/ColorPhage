@@ -1,13 +1,13 @@
 # ColorPhage
 
-ColorPhage is an early-stage R package for high-aesthetic scientific figure palettes. The current MVP includes simple `soft` and `vivid` modes plus the first advanced `forest` family for publication-oriented discrete colour palettes.
+ColorPhage is an early-stage R package for high-aesthetic scientific figure palettes. The current MVP includes simple `soft` and `vivid` modes plus the advanced `forest` and `mineral` families for publication-oriented discrete colour palettes.
 
 ## Current Scope
 
 - `phage_palette()` returns colour vectors.
 - `scale_color_phage()` and `scale_fill_phage()` provide ggplot2 discrete scales.
-- The MVP includes 9 confirmed `n = 8` palettes.
-- The first advanced family, `forest`, is implemented.
+- The MVP includes 12 confirmed `n = 8` palettes.
+- The first two advanced families, `forest` and `mineral`, are implemented.
 - Continuous palettes, diverging palettes, and generation features are planned but not implemented yet.
 
 ## Installation
@@ -28,6 +28,7 @@ library(ColorPhage)
 phage_palette(5, mode = "soft")
 phage_palette(8, mode = "vivid", variant = "drama")
 phage_palette(8, mode = "forest", variant = "canopy")
+phage_palette(8, mode = "mineral", variant = "slate")
 phage_palette(8, palette = "soft_harbor")
 ```
 
@@ -48,6 +49,10 @@ ggplot(mtcars, aes(factor(cyl), fill = factor(cyl))) +
 ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
   geom_point(size = 3) +
   scale_color_phage(mode = "forest")
+
+ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
+  geom_point(size = 3) +
+  scale_color_phage(mode = "mineral")
 ```
 
 ## Available Palettes
@@ -67,12 +72,16 @@ Current palette IDs:
 - `forest_canopy`
 - `forest_moss`
 - `forest_ember`
+- `mineral_slate`
+- `mineral_quartz`
+- `mineral_oxide`
 
 Default mappings:
 
 - `mode = "soft"` uses `soft_harbor`
 - `mode = "vivid"` uses `vivid_core`
 - `mode = "forest"` uses `forest_canopy`
+- `mode = "mineral"` uses `mineral_slate`
 
 ## Development Notes
 

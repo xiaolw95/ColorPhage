@@ -97,11 +97,45 @@
       "#1F3F35", "#496B57", "#7E916A", "#B8B58B",
       "#536E76", "#9A6B5A", "#C46F52", "#D7C6A1"
     )
+  ),
+  mineral_slate = list(
+    id = "mineral_slate",
+    mode = "mineral",
+    variant = "slate",
+    display_name = "Mineral Slate",
+    role = "Default mineral branch with slate blue-grey, mineral fog, cool sand, muted gold, rust, and plum.",
+    colors = c(
+      "#26384A", "#536879", "#7F95A3", "#AFC0C8",
+      "#D7D2C3", "#B8A27A", "#A46F5E", "#6E4F63"
+    )
+  ),
+  mineral_quartz = list(
+    id = "mineral_quartz",
+    mode = "mineral",
+    variant = "quartz",
+    display_name = "Mineral Quartz",
+    role = "Lighter mineral branch with translucent quartz greys, cool sand, soft terracotta, and muted violet.",
+    colors = c(
+      "#415A66", "#6F8790", "#9EB0B4", "#D8DED9",
+      "#C9BEA5", "#9E8E70", "#C48B73", "#7C6B82"
+    )
+  ),
+  mineral_oxide = list(
+    id = "mineral_oxide",
+    mode = "mineral",
+    variant = "oxide",
+    display_name = "Mineral Oxide",
+    role = "Mineral branch with cool stone structure and controlled iron-oxide anchors for key-group emphasis.",
+    colors = c(
+      "#2B3F4A", "#4E6B73", "#789097", "#B5C1BE",
+      "#D4C6A8", "#B9825D", "#A9574E", "#5E4A5D"
+    )
   )
 )
 
 .phage_mode_defaults <- c(
   soft = "soft_harbor",
   vivid = "vivid_core",
-  forest = "forest_canopy"
+  forest = "forest_canopy",
+  mineral = "mineral_slate"
 )
