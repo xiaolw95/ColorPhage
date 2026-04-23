@@ -5,6 +5,7 @@ ColorPhage is an early-stage R package for high-aesthetic scientific figure pale
 ## Current Scope
 
 - `phage_palette()` returns colour vectors.
+- `phage_continuous_palette()` and `phage_diverging_palette()` cover gradients, heatmaps, and centered quantitative displays.
 - `scale_color_phage()` and `scale_fill_phage()` provide ggplot2 discrete scales.
 - `theme_phage()` provides a matching ggplot2 publication theme.
 - The MVP includes 24 confirmed `n = 8` palettes.
@@ -40,6 +41,8 @@ phage_palette(8, palette = "soft_harbor")
 phage_palette(10, mode = "soft")
 phage_palette(12, mode = "vivid")
 phage_palette(12, mode = "forest")
+phage_continuous_palette(9, family = "ocean")
+phage_diverging_palette(11, family = "mineral")
 phage_large_palette(24, strategy = "clustered", family = "ocean")
 phage_collapse_tail(
   labels = c("A", "B", "C", "D", "E"),
@@ -88,6 +91,16 @@ ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
   geom_point(size = 3) +
   scale_color_phage(mode = "mist") +
   theme_phage(grid = "none")
+
+ggplot(mtcars, aes(wt, mpg, colour = mpg)) +
+  geom_point(size = 3) +
+  scale_colour_continuous_phage(family = "ocean") +
+  theme_phage()
+
+ggplot(mtcars, aes(wt, mpg, colour = mpg - mean(mpg))) +
+  geom_point(size = 3) +
+  scale_colour_diverging_phage(family = "mineral") +
+  theme_phage()
 ```
 
 ## Available Palettes
@@ -165,6 +178,14 @@ flat colour enumeration:
 - `phage_large_palette(..., strategy = "clustered")`
 - `phage_large_palette(..., strategy = "hierarchical")`
 - `phage_collapse_tail()` for long-tail composition plots
+
+For quantitative gradients and heatmap-like displays, ColorPhage now also
+provides:
+
+- `phage_continuous_palette()`
+- `phage_diverging_palette()`
+- `scale_colour_continuous_phage()` / `scale_fill_continuous_phage()`
+- `scale_colour_diverging_phage()` / `scale_fill_diverging_phage()`
 
 ## Gallery
 

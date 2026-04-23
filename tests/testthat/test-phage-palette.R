@@ -136,3 +136,27 @@ test_that("tail collapse preserves top labels and collapses others", {
 
   expect_identical(collapsed, c("A", "B", "C", "Other", "Other"))
 })
+
+test_that("continuous palettes return expected lengths", {
+  cols <- phage_continuous_palette(9, family = "ocean")
+
+  expect_length(cols, 9)
+  expect_true(all(grepl("^#", cols)))
+})
+
+test_that("diverging palettes return expected lengths", {
+  cols <- phage_diverging_palette(11, family = "mineral")
+
+  expect_length(cols, 11)
+  expect_true(all(grepl("^#", cols)))
+})
+
+test_that("continuous and diverging scales return ggplot objects", {
+  skip_if_not_installed("ggplot2")
+
+  continuous_scale <- scale_colour_continuous_phage(family = "ocean")
+  diverging_scale <- scale_fill_diverging_phage(family = "mineral")
+
+  expect_s3_class(continuous_scale, "Scale")
+  expect_s3_class(diverging_scale, "Scale")
+})
