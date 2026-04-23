@@ -17,6 +17,16 @@ A character vector with the same length as \code{labels}.
 Helps prepare long-tail composition plots by preserving only the top
 categories and collapsing the rest into a single \code{Other} level.
 }
+\details{
+This helper is intended for composition-like plots where the tail is less
+important than the dominant categories. It is not a palette generator. Its
+purpose is to improve plot readability before colours are assigned.
+
+Typical use cases include stacked abundance bars, proportional area plots, or
+other long-tail composition displays. In these cases, collapsing the tail
+often produces a more interpretable figure than trying to assign distinct
+colours to every minor category.
+}
 \examples{
 phage_collapse_tail(
   labels = c("A", "B", "C", "D", "E"),

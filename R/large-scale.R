@@ -5,6 +5,11 @@
 #' safely support as flat colours. It currently provides a clustered strategy
 #' and a hierarchical strategy for 13 to 30 categories.
 #'
+#' This helper is intended for complex classification figures such as
+#' fine-grained single-cell UMAPs or large multi-group scatter plots. It
+#' should not be treated as a simple "more colours" version of
+#' [phage_palette()]. For `n <= 12`, use [phage_palette()] instead.
+#'
 #' @param n Number of colours to return. Used for `strategy = "clustered"`.
 #' @param labels Optional labels for the output colours. Required for
 #'   `strategy = "hierarchical"`.
@@ -16,6 +21,17 @@
 #'
 #' @return A character vector of hexadecimal colours. When `labels` are
 #'   supplied, the vector is named.
+#'
+#' @details
+#' `strategy = "clustered"` is recommended when a figure has many categories
+#' but no clear parent-child structure. `strategy = "hierarchical"` is
+#' recommended when labels naturally belong to parent groups and colours should
+#' reflect that grouping.
+#'
+#' These experimental helpers intentionally avoid pretending that every
+#' 20-30-category figure can be solved by a flat discrete palette. When the
+#' data are strongly long-tailed, consider preprocessing with
+#' [phage_collapse_tail()] before plotting.
 #' @export
 #'
 #' @examples
@@ -77,12 +93,22 @@ phage_large_palette <- function(n = NULL,
 #' microbiome abundance charts, by preserving only the top categories and
 #' collapsing the rest into a single `Other` level.
 #'
+#' This helper is intended for composition-like plots where the tail is less
+#' important than the dominant categories. It is not a palette generator. Its
+#' purpose is to improve plot readability before colours are assigned.
+#'
 #' @param labels Category labels.
 #' @param values Numeric values used to rank category importance.
 #' @param top_n Number of categories to preserve before collapsing the tail.
 #' @param other_label Label used for the collapsed remainder.
 #'
 #' @return A character vector with the same length as `labels`.
+#'
+#' @details
+#' Typical use cases include stacked abundance bars, proportional area plots,
+#' or other long-tail composition displays. In these cases, collapsing the tail
+#' often produces a more interpretable figure than trying to assign distinct
+#' colours to every minor category.
 #' @export
 #'
 #' @examples

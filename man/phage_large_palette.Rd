@@ -24,6 +24,22 @@ A character vector of hexadecimal colours. When \code{labels} are supplied, the 
 Experimental helper for scenarios where a figure needs more categories than the
 standard discrete palette system can safely support as flat colours.
 }
+\details{
+This helper is intended for complex classification figures such as
+fine-grained single-cell UMAPs or large multi-group scatter plots. It should
+not be treated as a simple "more colours" version of \code{\link[=phage_palette]{phage_palette()}}.
+For \code{n <= 12}, use \code{\link[=phage_palette]{phage_palette()}} instead.
+
+\code{strategy = "clustered"} is recommended when a figure has many categories
+but no clear parent-child structure. \code{strategy = "hierarchical"} is
+recommended when labels naturally belong to parent groups and colours should
+reflect that grouping.
+
+These experimental helpers intentionally avoid pretending that every
+20-30-category figure can be solved by a flat discrete palette. When the data
+are strongly long-tailed, consider preprocessing with
+\code{\link[=phage_collapse_tail]{phage_collapse_tail()}} before plotting.
+}
 \examples{
 phage_large_palette(n = 24, strategy = "clustered", family = "ocean")
 

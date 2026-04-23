@@ -5,9 +5,9 @@ Authors@R: person(given = "ColorPhage", family = "Authors", role = c("aut", "cre
 Author: ColorPhage Authors
 Maintainer: ColorPhage Authors <colorphage@example.com>
 Description: Provides high-aesthetic, publication-oriented colour palettes
-    for scientific figures. The first development version focuses on simple
-    soft and vivid modes, with ggplot2 scale helpers for colour and fill
-    aesthetics.
+    for scientific figures. Includes discrete palette families, ggplot2
+    scale helpers for colour and fill, a matching publication theme, and
+    first-pass continuous and diverging palettes for quantitative displays.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
