@@ -90,19 +90,19 @@
     mode = "forest",
     variant = "canopy",
     display_name = "Forest Canopy",
-    role = "Default forest branch with deep green, moss, grey teal, muted gold, brick coral, berry, and parchment.",
+    role = "Default forest branch with bark green, leaf olive, seed gold, clay bark, and understory warmth.",
     colors = c(
-      "#23483A", "#6F8F62", "#A9B98F", "#6F9092",
-      "#D6B36A", "#C98563", "#8A4A58", "#E6DCC6"
+      "#1E352B", "#3F5C3F", "#687F4E", "#97A066",
+      "#BE9A58", "#A86D48", "#73453F", "#D7C9A8"
     ),
     extensions = list(
       `10` = c(
-        "#18372E", "#23483A", "#6F8F62", "#A9B98F", "#6F9092",
-        "#9FB7AE", "#D6B36A", "#C98563", "#8A4A58", "#E6DCC6"
+        "#14271F", "#1E352B", "#3F5C3F", "#687F4E", "#97A066",
+        "#B6BB84", "#BE9A58", "#A86D48", "#73453F", "#D7C9A8"
       ),
       `12` = c(
-        "#18372E", "#23483A", "#4E7050", "#6F8F62", "#A9B98F", "#6F9092",
-        "#9FB7AE", "#C6B27F", "#D6B36A", "#C98563", "#8A4A58", "#E6DCC6"
+        "#14271F", "#1E352B", "#304934", "#3F5C3F", "#687F4E", "#97A066",
+        "#B6BB84", "#CBB37B", "#BE9A58", "#A86D48", "#73453F", "#D7C9A8"
       )
     )
   ),
@@ -133,19 +133,19 @@
     mode = "mineral",
     variant = "slate",
     display_name = "Mineral Slate",
-    role = "Default mineral branch with slate blue-grey, mineral fog, cool sand, muted gold, rust, and plum.",
+    role = "Default mineral branch with graphite slate, steel blue, stone fog, cold sage-grey, and restrained violet-grey depth.",
     colors = c(
-      "#26384A", "#536879", "#7F95A3", "#AFC0C8",
-      "#D7D2C3", "#B8A27A", "#A46F5E", "#6E4F63"
+      "#18232D", "#2C4151", "#4D6474", "#7B909E",
+      "#B2C0C2", "#CDD0C7", "#7C8781", "#645A69"
     ),
     extensions = list(
       `10` = c(
-        "#1D2F40", "#26384A", "#536879", "#7F95A3", "#AFC0C8",
-        "#D7D2C3", "#B8A27A", "#A46F5E", "#896376", "#6E4F63"
+        "#101A22", "#18232D", "#2C4151", "#4D6474", "#7B909E",
+        "#B2C0C2", "#CDD0C7", "#969D95", "#7C8781", "#645A69"
       ),
       `12` = c(
-        "#1D2F40", "#26384A", "#405463", "#536879", "#7F95A3", "#AFC0C8",
-        "#D7D2C3", "#C7B89A", "#B8A27A", "#A46F5E", "#896376", "#6E4F63"
+        "#101A22", "#18232D", "#233340", "#2C4151", "#4D6474", "#7B909E",
+        "#B2C0C2", "#CDD0C7", "#A3AAA2", "#969D95", "#7C8781", "#645A69"
       )
     )
   ),
@@ -176,19 +176,19 @@
     mode = "ocean",
     variant = "current",
     display_name = "Ocean Current",
-    role = "Default ocean branch with flowing blue-green, sea-glass highlights, cool white, muted sand, and coral anchors.",
+    role = "Default ocean branch with deep tide blue, sea-glass teal, pale surf, water-light blue, and a restrained coral shoreline note.",
     colors = c(
-      "#1F4E5F", "#337A84", "#62A5A7", "#A7CED1",
-      "#D8E7E4", "#7FA6C2", "#C99A6B", "#B6635C"
+      "#103A4A", "#19576C", "#2F7E90", "#67B4BF",
+      "#B6D9D9", "#DCEBE6", "#88B4D0", "#C87364"
     ),
     extensions = list(
       `10` = c(
-        "#153C4A", "#1F4E5F", "#337A84", "#62A5A7", "#A7CED1",
-        "#D8E7E4", "#5E89A9", "#7FA6C2", "#C99A6B", "#B6635C"
+        "#0B2B38", "#103A4A", "#19576C", "#2F7E90", "#67B4BF",
+        "#B6D9D9", "#DCEBE6", "#88B4D0", "#A8C5DA", "#C87364"
       ),
       `12` = c(
-        "#153C4A", "#1F4E5F", "#337A84", "#4E93A0", "#62A5A7", "#A7CED1",
-        "#D8E7E4", "#5E89A9", "#7FA6C2", "#D7C3A3", "#C99A6B", "#B6635C"
+        "#0B2B38", "#103A4A", "#19576C", "#236E80", "#2F7E90", "#67B4BF",
+        "#B6D9D9", "#DCEBE6", "#88B4D0", "#A8C5DA", "#D8D7CA", "#C87364"
       )
     )
   ),
@@ -262,19 +262,19 @@
     mode = "cinema",
     variant = "noir",
     display_name = "Cinema Noir",
-    role = "Default cinema branch with dark blue-grey structure, warm copper, red-brown, and muted mauve anchors for focused result figures.",
+    role = "Default cinema branch with dark stage structure, spotlight parchment, aged gold, controlled brick-red, and velvet shadow plum.",
     colors = c(
-      "#1F2A36", "#3C4E63", "#6A7D91", "#A8B6C2",
-      "#D9D5CC", "#C59A63", "#B45A53", "#7A5D78"
+      "#121A22", "#283644", "#4B6173", "#D3CABD",
+      "#BE9250", "#AF5149", "#8B5960", "#56465D"
     ),
     extensions = list(
       `10` = c(
-        "#17202A", "#1F2A36", "#3C4E63", "#6A7D91", "#A8B6C2",
-        "#D9D5CC", "#C59A63", "#B45A53", "#99656A", "#7A5D78"
+        "#0D131A", "#121A22", "#283644", "#4B6173", "#7A8B95",
+        "#D3CABD", "#BE9250", "#AF5149", "#8B5960", "#56465D"
       ),
       `12` = c(
-        "#17202A", "#1F2A36", "#31414F", "#3C4E63", "#6A7D91", "#A8B6C2",
-        "#D9D5CC", "#CDB892", "#C59A63", "#B45A53", "#99656A", "#7A5D78"
+        "#0D131A", "#121A22", "#1C2731", "#283644", "#4B6173", "#7A8B95",
+        "#D3CABD", "#C8B18A", "#BE9250", "#AF5149", "#8B5960", "#56465D"
       )
     )
   ),
