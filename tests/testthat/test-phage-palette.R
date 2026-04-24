@@ -28,7 +28,7 @@ test_that("palette ids and variants resolve", {
   )
   expect_identical(
     phage_palette(2, mode = "forest", variant = "canopy"),
-    c("#23483A", "#6F8F62")
+    c("#1E352B", "#3F5C3F")
   )
   expect_identical(
     phage_palette(2, palette = "forest_ember"),
@@ -36,7 +36,7 @@ test_that("palette ids and variants resolve", {
   )
   expect_identical(
     phage_palette(2, mode = "mineral", variant = "slate"),
-    c("#26384A", "#536879")
+    c("#18232D", "#2C4151")
   )
   expect_identical(
     phage_palette(2, palette = "mineral_oxide"),
@@ -44,7 +44,7 @@ test_that("palette ids and variants resolve", {
   )
   expect_identical(
     phage_palette(2, mode = "ocean", variant = "current"),
-    c("#1F4E5F", "#337A84")
+    c("#103A4A", "#19576C")
   )
   expect_identical(
     phage_palette(2, palette = "ocean_depth"),
@@ -60,7 +60,7 @@ test_that("palette ids and variants resolve", {
   )
   expect_identical(
     phage_palette(2, mode = "cinema", variant = "noir"),
-    c("#1F2A36", "#3C4E63")
+    c("#121A22", "#283644")
   )
   expect_identical(
     phage_palette(2, palette = "cinema_velvet"),
@@ -80,7 +80,7 @@ test_that("palette ids and variants resolve", {
   )
   expect_identical(
     phage_palette(12, mode = "ocean")[c(1, 8, 12)],
-    c("#153C4A", "#5E89A9", "#B6635C")
+    c("#0B2B38", "#DCEBE6", "#C87364")
   )
 })
 
