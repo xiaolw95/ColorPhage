@@ -1,9 +1,9 @@
 Package: ColorPhage
 Title: High-Aesthetic Palettes for Scientific Figures
 Version: 0.0.0.9000
-Authors@R: person(given = "ColorPhage", family = "Authors", role = c("aut", "cre"), email = "colorphage@example.com")
-Author: ColorPhage Authors
-Maintainer: ColorPhage Authors <colorphage@example.com>
+Authors@R: person(given = "xiaolw95", family = "ColorPhage", role = c("aut", "cre"), email = "xiaolw95@163.com")
+Author: xiaolw95 ColorPhage
+Maintainer: xiaolw95 ColorPhage <xiaolw95@163.com>
 Description: Provides high-aesthetic, publication-oriented colour palettes
     for scientific figures. Includes discrete palette families, ggplot2
     scale helpers for colour and fill, a matching publication theme, and
