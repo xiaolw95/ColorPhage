@@ -1,8 +1,6 @@
 # ColorPhage news
 
-## Development version
-
-### ColorPhage 0.0.0.9000
+## ColorPhage 0.1.0
 
 - Built the first discrete palette system with 24 confirmed palettes across
   `soft`, `vivid`, `forest`, `mineral`, `ocean`, `retro`, `cinema`, and
@@ -15,5 +13,5 @@
   `phage_large_palette()` and `phage_collapse_tail()`.
 - Added first-pass continuous and diverging palette helpers plus ggplot2
   scales for quantitative displays.
-- Added gallery pages, validation assets, tests, and release-prep
-  documentation.
+- Added gallery pages, representative quantitative validation assets, tests,
+  and release-prep documentation.
